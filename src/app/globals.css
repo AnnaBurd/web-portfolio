@@ -2,26 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color variables */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --text-rgb: 0, 0, 0;
+  --background-accent-rgb: 186, 212, 206;
+
+  --color-blue-rgb: 38, 78, 112;
+  --color-pink-rgb: 249, 180, 171;
+  --color-yellow-rgb: 253, 235, 211;
+  --color-green-rgb: 103, 145, 134;
+
+  --background-accent: rgba(var(--background-accent-rgb), 0.4);
+
+  --color-btn: #a5c0b8;
+  --color-btn-active: #87aba0;
+
+  --color-btn--secondary: #fdebd3;
+  --color-btn--secondary-active: #fad29e;
+
+  --color-link-highlight: #f8bc6d;
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-rgb: 255, 255, 255;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--text-rgb));
+  background: rgb(var(--foreground-rgb));
+  /* font-size: calc(15px + 0.390625vw); */
+}
+
+/* Container wrapper, controls maximum width of page content (an alternative approach would be to use grid ) */
+.wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 4.5rem;
+}
+
+.gap-x {
+  column-gap: clamp(1.5rem /* 24px */, 10vw, 20rem /* 320px */);
+}
+
+/* Style scrollbars */
+
+/* Style text selection */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  /* display: inline-block;
+  padding: 0.08rem 0.1rem;
+  transition: all 0.2s ease-out; */
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  inset: 50% -4px 16% 4%;
+  background: var(--color-link-highlight);
+  z-index: -1;
 }
