@@ -1,3 +1,4 @@
+import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "./ui/Link";
 
 type Props = {};
@@ -13,24 +14,23 @@ const Header: React.FC<Props> = ({}) => {
             aria-label="home"
             className="  mr-auto text-lg font-extrabold"
           >
-            <span className="[font-size:1.15rem]">A</span>nna
-            <span className="[font-size:1.15rem]">B</span>urd.
+            <span className="[font-size:1.02em]">A</span>nna
+            <span className="[font-size:1.02em]">B</span>urd.
           </a>
           <nav>
-            {/* <a href="/#portfolio" className="mx-4 p-2 text-base font-medium">
-              my work
-            </a> */}
             <Link href="/#portfolio" className="mx-4 ">
               my work
             </Link>
             <Link href="/#footer" className="mx-4 ">
               get in touch
             </Link>
-            {/* <a href="/#footer" className="mx-4  p-2 text-base font-medium">
-              get in touch
-            </a> */}
           </nav>
           <div className="ml-8 text-base font-medium">EN</div>
+          <LanguageSwitcher
+            onLanguageChange={function (locale: string): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
         </div>
       </div>
     </header>
