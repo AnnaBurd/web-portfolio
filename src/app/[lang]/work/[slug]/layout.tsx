@@ -1,8 +1,10 @@
+import { Locale } from "../../../i18n/i18n-config";
+
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams({
   params: { lang },
 }: {
-  params: { lang: string };
+  params: { lang: Locale };
 }) {
   console.log("work generateStaticParams [lang] = ", lang);
   return [{ slug: "project-0" }, { slug: "project-1" }];
@@ -16,7 +18,7 @@ export default function Layout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string; slug: string };
+  params: { lang: Locale; slug: string };
 }) {
   console.log("work layout [Lang] = ", params.lang, " [slug] = ", params.slug);
 

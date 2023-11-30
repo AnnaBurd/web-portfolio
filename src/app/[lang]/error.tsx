@@ -1,13 +1,30 @@
-"use client";
+"use client"; // Error components must be Client Components
 
-type Props = {};
+import { useEffect } from "react";
 
-const Error: React.FC<Props> = () => {
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  useEffect(() => {
+    // Log the error to an error reporting service
+    console.error(error);
+  }, [error]);
+
   return (
     <div className="fixed flex h-screen w-screen items-center justify-center bg-red-500 text-3xl  text-white opacity-80">
-      Error: React.FC ...
+      <h2>Something went wrong!</h2>
+      <button
+        onClick={
+          // Attempt to recover by trying to re-render the segment
+          () => reset()
+        }
+      >
+        Try again
+      </button>
     </div>
   );
-};
-
-export default Error;
+}
