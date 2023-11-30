@@ -1,6 +1,5 @@
-import { fontSecondary } from "../../../../fonts";
-
-import ButtonLink from "../../ui/ButtonLink";
+import { fontSecondary } from "@/app/fonts";
+import ButtonLink from "../../../components/ui/ButtonLink";
 
 type Props = {};
 
