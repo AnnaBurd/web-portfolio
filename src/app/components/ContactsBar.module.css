@@ -1,0 +1,45 @@
+.contacts {
+  /* background: white; */
+  background: rgb(var(--background-rgb));
+
+  --padding-y: 18px;
+  --padding-x: 17px;
+  --rounded: 20px;
+
+  padding-left: 0;
+  padding-right: var(--padding-x);
+  padding-top: var(--padding-y);
+  padding-bottom: var(--padding-y);
+
+  border-radius: 0 var(--rounded) var(--rounded) 0;
+}
+
+.contacts::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: calc(-49px);
+  left: 12px;
+  transform: translate(0, 0);
+  height: 50px;
+  width: calc(var(--rounded) - 2px);
+
+  /* background: red; */
+  box-shadow: 0px var(--rounded) 0 0 rgb(var(--background-rgb));
+  border-bottom-left-radius: var(--rounded);
+}
+
+.contacts::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  bottom: calc(-49px);
+  left: 12px;
+  transform: translate(0, 0);
+  height: 50px;
+  width: calc(var(--rounded) - 2px);
+
+  /* background: blue; */
+  box-shadow: 0px calc(-1 * var(--rounded)) 0 0 rgb(var(--background-rgb));
+  border-top-left-radius: var(--rounded);
+}

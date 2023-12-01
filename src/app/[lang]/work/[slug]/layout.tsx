@@ -20,7 +20,12 @@ export default function Layout({
   children: React.ReactNode;
   params: { lang: Locale; slug: string };
 }) {
-  console.log("work layout [Lang] = ", params.lang, " [slug] = ", params.slug);
+  console.log(
+    "work path: layout [Lang] = ",
+    params.lang,
+    " [slug] = ",
+    params.slug,
+  );
 
   return children;
 }
