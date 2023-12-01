@@ -1,0 +1,16 @@
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.flag-icon-en {
+  background-image: url("https://flagsapi.com/GB/flat/64.png");
+}
+.flag-icon-ru {
+  background-image: url("https://flagsapi.com/RU/flat/64.png");
+}
+.flag-icon-vi {
+  background-image: url("https://flagsapi.com/VN/flat/64.png");
+}

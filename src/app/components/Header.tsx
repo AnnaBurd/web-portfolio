@@ -1,6 +1,7 @@
-import { Locale } from "../i18n/i18n-config";
-import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "./ui/Link";
+
+import LanguagePicker from "./language-picker/LanguagePicker";
+import { Locale } from "../i18n/i18n-config";
 
 type Props = {
   lang: Locale;
@@ -28,8 +29,8 @@ const Header: React.FC<Props> = async ({ lang }) => {
               get in touch
             </Link>
           </nav>
-          {/* <div className="ml-8 text-base font-medium">EN</div> */}
-          <LanguageSwitcher lang={lang} />
+
+          <LanguagePicker currentLang={lang} />
         </div>
       </div>
     </header>

@@ -20,7 +20,7 @@
   --color-btn--secondary: #fdebd3;
   --color-btn--secondary-active: #fad29e;
 
-  --color-link-highlight: #f8bc6d;
+  --color-link-highlight: #ffe872;
 }
 
 /* Dark mode */
@@ -67,7 +67,7 @@ html {
 .highlight::before {
   content: "";
   position: absolute;
-  inset: 50% -4px 16% 4%;
+  inset: 53% -6px 10% 4%;
   background: var(--color-link-highlight);
   z-index: -1;
 }
