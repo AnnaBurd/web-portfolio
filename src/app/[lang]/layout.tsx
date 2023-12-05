@@ -5,6 +5,7 @@ import { fontPrimary } from "../fonts";
 
 import { Locale, locales } from "../i18n/i18n-config";
 import ContactsBar from "../components/ContactsBar";
+import SplashScreen from "../components/SplashScreen";
 
 // Return a list of `params` to populate the [lang] dynamic segment
 export async function generateStaticParams() {
@@ -26,6 +27,7 @@ export default function Layout({ children, params: { lang } }: Props) {
   return (
     <html lang={lang}>
       <body className={fontPrimary.className}>
+        <SplashScreen />
         <ContactsBar />
         <Header lang={lang} />
         {children}
