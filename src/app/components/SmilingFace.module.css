@@ -1,0 +1,26 @@
+.smiley-face {
+  /* These css variables are dynamically updated in React component */
+  --blink-animation-duration: 8s;
+  --blink-animation-delay: 200s;
+}
+
+.eye {
+  transform-origin: 50% 60%;
+  transform-box: fill-box;
+}
+
+.blink {
+  animation: blink var(--blink-animation-duration) var(--blink-animation-delay)
+    infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    transform: scale(1, 0.05);
+  }
+  5%,
+  95% {
+    transform: scale(1, 1);
+  }
+}
