@@ -53,6 +53,11 @@ body {
 
 /* Style scrollbars */
 
+body {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
 /* Style text selection */
 
 html {

@@ -5,7 +5,7 @@ import { fontPrimary } from "../fonts";
 
 import { Locale, locales } from "../i18n/i18n-config";
 import ContactsBar from "../components/ContactsBar";
-import SplashScreen from "../components/SplashScreen";
+import SplashScreen from "../components/splash-screen/SplashScreen";
 
 // Return a list of `params` to populate the [lang] dynamic segment
 export async function generateStaticParams() {
