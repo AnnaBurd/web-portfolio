@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type Props = {};
 
 const Project: React.FC<Props> = ({}) => {
@@ -20,7 +22,7 @@ const Project: React.FC<Props> = ({}) => {
           the website and the blog in Webflow which has one of the best CMS for
           blog hosting.
         </p>
-        <a href="/project">See the project</a>
+        <Link href="/project">See the project</Link>
       </div>
 
       <div className=" col-start-2 row-start-1 row-end-3 bg-red-900">
