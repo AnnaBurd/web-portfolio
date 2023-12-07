@@ -5,14 +5,17 @@
 /* Color variables */
 :root {
   --text-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+
   --background-accent-rgb: 186, 212, 206;
+  /* --background-accent: rgba(var(--background-accent-rgb), 0.4); */
+  /* --background-accent: red; */
+  --background-accent: #e3eeeb;
 
   --color-blue-rgb: 38, 78, 112;
   --color-pink-rgb: 249, 180, 171;
   --color-yellow-rgb: 253, 235, 211;
   --color-green-rgb: 103, 145, 134;
-
-  --background-accent: rgba(var(--background-accent-rgb), 0.4);
 
   --color-btn: #a5c0b8;
   --color-btn-active: #87aba0;
@@ -20,7 +23,7 @@
   --color-btn--secondary: #fdebd3;
   --color-btn--secondary-active: #fad29e;
 
-  --color-link-highlight: #f8bc6d;
+  --color-link-highlight: #ffe872;
 }
 
 /* Dark mode */
@@ -33,7 +36,7 @@
 
 body {
   color: rgb(var(--text-rgb));
-  background: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
   /* font-size: calc(15px + 0.390625vw); */
 }
 
@@ -41,7 +44,7 @@ body {
 .wrapper {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 4.5rem;
+  padding: 0 6rem;
 }
 
 .gap-x {
@@ -49,6 +52,11 @@ body {
 }
 
 /* Style scrollbars */
+
+body {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
 
 /* Style text selection */
 
@@ -67,7 +75,7 @@ html {
 .highlight::before {
   content: "";
   position: absolute;
-  inset: 50% -4px 16% 4%;
+  inset: 53% -6px 10% 4%;
   background: var(--color-link-highlight);
   z-index: -1;
 }
