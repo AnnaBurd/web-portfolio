@@ -44,10 +44,16 @@ const excludeKeysFromSummary = ["pwa"];
 const resultSummaryKeys = (summary) =>
   Object.keys(summary).filter((key) => !excludeKeysFromSummary.includes(key));
 
+const toTitleCase = (str) => {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+};
+
 const tableHeader =
   `| Preview URL and Report | ` +
   resultSummaryKeys(results[0].summary)
-    .map((key) => ` ${key} |`)
+    .map((key) => ` ${key === "seo" ? key.toUpperCase() : toTitleCase(key)} |`)
     .join("");
 
 const tableDivider =
@@ -60,7 +66,10 @@ const tableRows = results
   .map((result) => {
     const url = result.url;
     const summary = result.summary;
-    return `| 🌎 [${url}](${url}) <br /> ⚡️ [Lighthouse report](${
+    return `| 🌎 [${url.replace(
+      "https",
+      "",
+    )}](${url}) <br /> ⚡️ [Lighthouse report](${
       links[url]
     }) | ${resultSummaryKeys(summary)
       .map((key) => {
@@ -69,9 +78,9 @@ const tableRows = results
       })
       .join("|")} |`;
   })
-  .join("/n");
+  .join("\n");
 
-let output = "**Lighthouse Performance Results**\n\n";
+let output = "**Lighthouse Performance Results 🚀**\n\n";
 output += tableHeader + "\n";
 output += tableDivider + "\n";
 output += tableRows + "\n";

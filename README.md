@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/616ca1c2-abb2-438f-93a5-a0c52a71104b/deploy-status)](https://app.netlify.com/sites/roaring-douhua-959988/deploys)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
