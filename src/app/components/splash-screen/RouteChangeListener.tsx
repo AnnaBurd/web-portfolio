@@ -12,8 +12,6 @@ const storePathValues = (newPath: string) => {
 
   storage.setItem("prevPath", currPath);
   storage.setItem("currentPath", newPath);
-
-  // console.log(`🫙 storePathValues (${currPath} <- ${newPath})`);
 };
 
 export const getPrevPath = () => {
@@ -22,8 +20,6 @@ export const getPrevPath = () => {
   if (!storage) return "";
 
   const prevPath = storage.getItem("prevPath") || "";
-
-  // console.log("🫙 getPrevPath", storage);
 
   return prevPath;
 };
@@ -42,7 +38,7 @@ export function RouteChangeListener() {
   const pathname = usePathname();
 
   useEffect(() => {
-    console.log(`Route changed to: ${pathname}`);
+    console.log(`RouteChangeListener: route changed to: ${pathname}`);
 
     // Store history of navigation in local session storage
     storePathValues(pathname);

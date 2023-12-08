@@ -17,8 +17,6 @@ type Props = {
 export default async function Home({ params: { lang } }: Props) {
   const { t } = await useTranslation(lang, "home");
 
-  console.log("Generating home page: ", "lang=", lang, t("title"));
-
   return (
     <main>
       <Hero />
