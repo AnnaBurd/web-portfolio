@@ -33,7 +33,7 @@ export default function LanguagePicker({ currentLang }: Props) {
   };
 
   return (
-    <Menu as="div" className="relative inline-block ">
+    <Menu as="div" className="relative inline-block min-w-[4rem] text-right">
       <Menu.Button className="text-small   justify-center    font-medium      focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
         {({ open }) => {
           return (
