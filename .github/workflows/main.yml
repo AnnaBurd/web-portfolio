@@ -62,31 +62,40 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const links = ${{ steps.lighthouse_audit.outputs.links }};
-            let results = ${{ steps.lighthouse_audit.outputs.manifest }}.filter(result => result.isRepresentativeRun);
-
-            results = results.map((result) => {
-              const url = result.url;
-              const summary = result.summary;
-              return {
-                url,
-                summary.filter((key) => key !== 'pwa'))
-              };
-            });
+            const results = ${{ steps.lighthouse_audit.outputs.manifest }}.filter(result => result.isRepresentativeRun);
 
             const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴';
 
-            const tableHeader = `| Preview URL and Report | ` + Object.keys(results[0].summary).map((key) => ` ${key} |`).join('');
+            const excludeKeysFromSummary = ["pwa"];
+            const resultSummaryKeys = (summary) =>
+              Object.keys(summary).filter((key) => !excludeKeysFromSummary.includes(key));
 
-            const tableDivider = `| --- | ` + Object.keys(results[0].summary).map(() => ` --- |`).join('');
+            const tableHeader =
+              `| Preview URL and Report | ` +
+              resultSummaryKeys(results[0].summary)
+                .map((key) => ` ${key} |`)
+                .join("");
 
-            const tableRows = results.map((result) => {
-              const url = result.url;
-              const summary = result.summary;
-              return `| 🌎 [${url}](${url}) <br /> ⚡️ [Lighthouse report](${links[url]}) | ${Object.keys(summary).map((key)=>{
-                const percentage = Math.round(summary[key] * 100);
-                return ` ${score(percentage)} ${percentage} `;
-              }).join("|")} |`;
-            }).join('/n');
+            const tableDivider =
+                `| --- | ` +
+                resultSummaryKeys(results[0].summary)
+                  .map(() => ` --- |`)
+                  .join("");
+
+            const tableRows = results
+                  .map((result) => {
+                    const url = result.url;
+                    const summary = result.summary;
+                    return `| 🌎 [${url}](${url}) <br /> ⚡️ [Lighthouse report](${
+                      links[url]
+                    }) | ${resultSummaryKeys(summary)
+                      .map((key) => {
+                        const percentage = Math.round(summary[key] * 100);
+                        return ` ${score(percentage)} ${percentage} `;
+                      })
+                      .join("|")} |`;
+                  })
+                  .join("/n");
 
 
             let output = '**Lighthouse Performance Results**\n\n';
