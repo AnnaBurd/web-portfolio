@@ -6,7 +6,6 @@ export async function generateStaticParams({
 }: {
   params: { lang: Locale };
 }) {
-  console.log("work generateStaticParams [lang] = ", lang);
   return [{ slug: "project-0" }, { slug: "project-1" }];
 }
 
@@ -20,12 +19,5 @@ export default function Layout({
   children: React.ReactNode;
   params: { lang: Locale; slug: string };
 }) {
-  console.log(
-    "work path: layout [Lang] = ",
-    params.lang,
-    " [slug] = ",
-    params.slug,
-  );
-
   return children;
 }

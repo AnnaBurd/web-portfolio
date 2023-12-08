@@ -10,9 +10,11 @@ function getPreferredLocale(request: NextRequest): string | undefined {
   // Check if the cookie from previous visit with the locale preferences exist
   const localeCookie = request.cookies.get(cookieName);
 
-  console.log("🚀 localeCookie", localeCookie);
   if (localeCookie && availableLocales.some((l) => l === localeCookie.value)) {
-    console.log("🚀 localeCookie", localeCookie);
+    console.log(
+      "🌍 getPreferredLocale: got locale preferences from cookie - ",
+      localeCookie.value,
+    );
     return localeCookie.value;
   }
 
@@ -24,8 +26,8 @@ function getPreferredLocale(request: NextRequest): string | undefined {
   }).languages(availableLocales);
 
   console.log(
-    "🚀 languages user accepts among availiable locales: ",
-    languages,
+    "🌍 getPreferredLocale: got locale preferences from the request header - ",
+    languages[0],
   );
 
   const preferredLocale = languages[0];
@@ -39,16 +41,12 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
-  console.log(
-    !pathnameHasLocale
-      ? `🚀 middleware - navigating route ${pathname} to correct locale`
-      : `🚀 middleware - path [${pathname}] has locale defined`,
-  );
   if (pathnameHasLocale) return; // The pathname already has a locale, so we don't need to redirect
+
+  console.log(`➡️ middleware - redirecting ${pathname} to correct locale`);
 
   // Check if the browser has a default language preference
   const preferredLocale = getPreferredLocale(request);
-  console.log("🚀 preferredLocale", preferredLocale);
 
   const locale = preferredLocale || defaultLocale;
   // Redirect to the path with the preferred|default locale

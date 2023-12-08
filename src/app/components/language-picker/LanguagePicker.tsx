@@ -23,8 +23,6 @@ export default function LanguagePicker({ currentLang }: Props) {
   const redirectedPathName = (locale: string) => {
     if (!pathName) return "/";
     const segments = pathName.split("/");
-    // console.log("pathName", pathName);
-    // console.log("segments", segments);
 
     if (segments[0] === "" && segments[1] === "work") {
       segments.splice(1, 0, locale);
