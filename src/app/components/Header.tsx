@@ -21,7 +21,7 @@ const Header: React.FC<Props> = async ({ lang }) => {
             <span className="[font-size:1.02em]">A</span>nna
             <span className="[font-size:1.02em]">B</span>urd.
           </a>
-          <nav className="mr-3">
+          <nav className="mr-0.5">
             <Link href="/#portfolio" className="mx-4 ">
               my work
             </Link>
