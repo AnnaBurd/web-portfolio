@@ -10,7 +10,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository (${{ github.ref }} branch) has been cloned to the runner (${{ runner.os }}), triggeded by a ${{ github.event_name }} event."
 
       - name: Add comment to PR
@@ -45,52 +45,53 @@ jobs:
         uses: treosh/lighthouse-ci-action@v10
         with:
           urls: |
-            ${{ steps.wait_for_netlify.outputs.url }}/
-            ${{ steps.wait_for_netlify.outputs.url }}/en
-            ${{ steps.wait_for_netlify.outputs.url }}/vi
-            ${{ steps.wait_for_netlify.outputs.url }}/ru
+            ${{ steps.wait_for_netlify.outputs.url }}
+            ${{ steps.wait_for_netlify.outputs.url }}en
+            ${{ steps.wait_for_netlify.outputs.url }}vi
+            ${{ steps.wait_for_netlify.outputs.url }}ru
           budgetPath: ".github/lighthouse/budget.json" # test performance budgets https://web.dev/articles/use-lighthouse-for-performance-budgets
           uploadArtifacts: true # save results as an action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
           runs: 2 # number of times to run Lighthouse
 
-      - name: Format lighthouse result
+      - name: Format lighthouse results
         id: lighthouse_result
         if: ${{ always() }}
-        uses: actions/github-script@v4
+        uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const links = ${{ steps.lighthouse_audit.outputs.links }};
-            let results = ${{ steps.lighthouse_audit.outputs.manifest }};
-            results = results.filter(result => result.isRepresentativeRun);
+            const results = ${{ steps.lighthouse_audit.outputs.manifest }}.filter(result => result.isRepresentativeRun);
 
             const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴';
 
-            const comment = results.map((result) => {
-              const summary = result.summary;
+            const tableHeader = `| Preview URL and Report | ` + Object.keys(results[0].summary).map((key) => ` ${key} |`).join('');
+
+            const tableDivider = `| --- | ` + Object.keys(results[0].summary).map(() => ` --- |`).join('');
+
+            const tableRows = results.map((result) => {
               const url = result.url;
-
-              return `
-              🌎 [${url}](${url})
-              ⚡️ [Lighthouse report](${links[url]})
-
-              | Category | Score |
-              | --- | --- |
-              ${Object.keys(summary).map((key) => {
+              const summary = result.summary;
+              return `| 🌎 [${url}](${url})
+              ⚡️ [Lighthouse report](${links[url]}) | ${Object.keys(summary).map((key)=>{
                 const percentage = Math.round(summary[key] * 100);
-                return `| ${score(percentage)} ${key} | ${percentage} |`;
-              }).join('\n')}
-
-              `;
+                return ` ${score(percentage)} ${percentage} |`;
+              }).join("")} |`;
             }).join('---');
 
-            core.setOutput("comment", comment);
+
+            let output = '**Lighthouse Performance Results**\n\n';
+            output += tableHeader + '\n';
+            output += tableDivider + '\n';
+            output += tableRows + '\n';
+
+            core.setOutput("comment", output);
 
       - name: Format budget result
         id: budget_result
         if: ${{ always() }}
-        uses: actions/github-script@v4
+        uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
