@@ -62,7 +62,16 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const links = ${{ steps.lighthouse_audit.outputs.links }};
-            const results = ${{ steps.lighthouse_audit.outputs.manifest }}.filter(result => result.isRepresentativeRun);
+            let results = ${{ steps.lighthouse_audit.outputs.manifest }}.filter(result => result.isRepresentativeRun);
+
+            results = results.map((result) => {
+              const url = result.url;
+              const summary = result.summary;
+              return {
+                url,
+                summary.filter((key) => key !== 'pwa'))
+              };
+            });
 
             const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴';
 
@@ -73,12 +82,11 @@ jobs:
             const tableRows = results.map((result) => {
               const url = result.url;
               const summary = result.summary;
-              return `| 🌎 [${url}](${url})
-              ⚡️ [Lighthouse report](${links[url]}) | ${Object.keys(summary).map((key)=>{
+              return `| 🌎 [${url}](${url}) <br /> ⚡️ [Lighthouse report](${links[url]}) | ${Object.keys(summary).map((key)=>{
                 const percentage = Math.round(summary[key] * 100);
-                return ` ${score(percentage)} ${percentage} |`;
-              }).join("")} |`;
-            }).join('---');
+                return ` ${score(percentage)} ${percentage} `;
+              }).join("|")} |`;
+            }).join('/n');
 
 
             let output = '**Lighthouse Performance Results**\n\n';
