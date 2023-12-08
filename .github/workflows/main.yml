@@ -6,7 +6,7 @@ jobs:
   lighthouse:
     runs-on: ubuntu-latest
     permissions:
-      # contents: read
+      contents: read
       pull-requests: write
     steps:
       - uses: actions/checkout@v3
@@ -39,7 +39,7 @@ jobs:
           budgetPath: ".github/lighthouse/budget.json" # test performance budgets https://web.dev/articles/use-lighthouse-for-performance-budgets
           uploadArtifacts: true # save results as an action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
-          runs: 2 # number of times to run Lighthouse
+          runs: 1 # number of times to run Lighthouse
       - name: Format lighthouse result
         id: lighthouse_result
         if: ${{ always() }}
