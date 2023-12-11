@@ -11,10 +11,27 @@ import { usePathname } from "next/navigation";
 
 import { Locale, locales } from "../../i18n/i18n-config";
 import { useTranslation } from "../../i18n/client";
+import ReactDOM from "react-dom";
 
 type Props = {
   currentLang: Locale;
 };
+
+// Preload image flags so they are ready when the user changes language
+ReactDOM.preload("https://flagsapi.com/GB/flat/64.png", {
+  as: "image",
+  fetchPriority: "low",
+});
+
+ReactDOM.preload("https://flagsapi.com/RU/flat/64.png", {
+  as: "image",
+  fetchPriority: "low",
+});
+
+ReactDOM.preload("https://flagsapi.com/VN/flat/64.png", {
+  as: "image",
+  fetchPriority: "low",
+});
 
 export default function LanguagePicker({ currentLang }: Props) {
   const { t } = useTranslation(currentLang, "common");
