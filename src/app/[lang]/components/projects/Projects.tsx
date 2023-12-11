@@ -7,8 +7,6 @@ type Props = { lang: Locale };
 const Projects: React.FC<Props> = ({ lang }) => {
   const projects = getProjectsData(lang);
 
-  console.log("projects data from markdown: ", projects);
-
   return (
     <section className="wrapper" id="portfolio">
       {projects.map((project) => (

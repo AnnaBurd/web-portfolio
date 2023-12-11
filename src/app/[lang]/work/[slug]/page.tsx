@@ -13,8 +13,6 @@ type Props = {
 const ProjectPage: React.FC<Props> = ({ params }) => {
   const projectData = getProjectData(params.slug, params.lang);
 
-  console.log("Rendering project page", projectData, params);
-
   return (
     <div className=" flex min-h-screen w-screen flex-col items-center justify-center bg-yellow-500 text-3xl  text-white opacity-80">
       Project: {params.slug} ({params.lang.toUpperCase()})

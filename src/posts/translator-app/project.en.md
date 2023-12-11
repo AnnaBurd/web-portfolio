@@ -7,7 +7,7 @@ tags:
   - Concept
 ---
 
-# Main content
+## Main content
 
 ## One morning, when Gregor Samsa woke from troubled dreams
 

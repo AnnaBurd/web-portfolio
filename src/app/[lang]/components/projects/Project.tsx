@@ -17,8 +17,6 @@ type Props = {
 };
 
 const Project: React.FC<Props> = ({ data, lang }) => {
-  console.log("Rendering project", data, lang);
-
   return (
     <article className="gap-x  grid grid-cols-2">
       <div className="pointer-events-none">
@@ -67,7 +65,7 @@ const Project: React.FC<Props> = ({ data, lang }) => {
 
       <div className=" col-start-2 row-start-1 row-end-3 place-self-center ">
         <Link
-          href="/work/project-0"
+          href={`${lang}/work/${data.slug}`}
           className={`${styles.preview} group relative`}
         >
           <span className="block transform-gpu transition-all duration-300 ease-in-out before:absolute   before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
