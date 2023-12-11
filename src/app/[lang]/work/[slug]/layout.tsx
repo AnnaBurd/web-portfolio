@@ -1,5 +1,9 @@
 import { getProjectsData } from "@/scripts/getProjectsData";
 import { Locale } from "../../../i18n/i18n-config";
+import { Metadata } from "next";
+
+// Add tags to <head> of the page
+export const metadata: Metadata = {};
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams({
