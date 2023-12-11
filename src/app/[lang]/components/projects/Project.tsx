@@ -4,15 +4,21 @@ import Link from "next/link";
 import ButtonLink from "@/app/components/ui/ButtonLink";
 import { fontSecondary } from "@/app/fonts";
 
-import mockupPicture from "@/posts/project-0/mokup.jpeg";
 import Dots from "./Dots";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 import styles from "./Project.module.css";
+import { ProjectData } from "./Model";
+import { Locale } from "@/app/i18n/i18n-config";
 
-type Props = {};
+type Props = {
+  data: ProjectData;
+  lang: Locale;
+};
 
-const Project: React.FC<Props> = ({}) => {
+const Project: React.FC<Props> = ({ data, lang }) => {
+  console.log("Rendering project", data, lang);
+
   return (
     <article className="gap-x  grid grid-cols-2">
       <div className="pointer-events-none">
@@ -24,33 +30,36 @@ const Project: React.FC<Props> = ({}) => {
             fontSecondary.className + `  mb-4 font-black leading-tight`
           }
         >
-          Geology Specialized AI Translator App
+          {data.title}
         </h2>
         <div className="mb-8 flex gap-2">
-          <div className="bg-[--background-accent] px-2.5 py-1 text-xs font-bold tracking-wide">
-            Website Design
-          </div>
-          <div className="bg-[--background-accent] px-2.5 py-1 text-xs font-bold tracking-wide">
-            Webflow develompent
-          </div>
-          <div className="bg-[--background-accent] px-2.5 py-1 text-xs font-bold tracking-wide">
-            Concept
-          </div>
+          {data.tags.map((tag) => (
+            <div
+              key={tag}
+              className="bg-[--background-accent] px-2.5 py-1 text-xs font-bold tracking-wide "
+            >
+              {tag}
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="pointer-events-none">
         <p className=" max-w-prose text-base leading-relaxed tracking-wide [text-wrap:balance]">
-          Full website design and build for a concept team collaboration
-          platform. This website also includes a beautiful blog. I have built
-          the website and the blog in Webflow which has one of the best CMS for
-          blog hosting.
+          {data.introduction}
         </p>
         <div className="pointer-events-auto mt-8 flex gap-4">
-          <ButtonLink href="/work/project-0" className="min-w-[9rem]">
+          <ButtonLink
+            href={`${lang}/work/${data.slug}`}
+            className="min-w-[9rem]"
+          >
             About
           </ButtonLink>
-          <ButtonLink href="/#" kind="secondary" className="min-w-[9rem]">
+          <ButtonLink
+            href={data.previewUrl}
+            kind="secondary"
+            className="min-w-[9rem]"
+          >
             View live
           </ButtonLink>
         </div>
@@ -63,8 +72,10 @@ const Project: React.FC<Props> = ({}) => {
         >
           <span className="block transform-gpu transition-all duration-300 ease-in-out before:absolute   before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
             <Image
-              src={mockupPicture}
-              alt="A mokup of a project"
+              src={data.previewImg}
+              alt={`A mokup of the ${data.title} project`}
+              width={400}
+              height={400}
               className=" "
             />
           </span>
