@@ -20,7 +20,7 @@ export default async function Home({ params: { lang } }: Props) {
   return (
     <main>
       <Hero />
-      <Projects />
+      <Projects lang={lang} />
       <About />
     </main>
   );
