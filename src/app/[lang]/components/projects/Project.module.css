@@ -1,0 +1,29 @@
+/* On hover animations of the project link arrow */
+.arrow {
+  padding: 1rem;
+  padding-top: 2rem;
+  transform: translate3d(-2rem, 2.6rem, 0);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.preview:hover .arrow {
+  transform: translate3d(0, 2.6rem, 0);
+  opacity: 0.4;
+  visibility: visible;
+  pointer-events: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow-icon {
+  transform-origin: center left;
+  transform: translateX(-1rem) scale3d(0.1, 0.9, 1);
+  transition: all 0.2s ease-in-out;
+}
+
+.preview:hover .arrow-icon {
+  transform: translateX(0rem) scale3d(1, 1, 1);
+  transition: all 0.3s 0.1s ease-in-out;
+}

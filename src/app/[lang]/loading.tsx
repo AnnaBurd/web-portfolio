@@ -1,5 +1,7 @@
 type Props = {};
 
+// TODO: check if on top of the page, if not, show different loading animation??
+
 const Loading: React.FC<Props> = () => {
   return (
     <section className="relative flex min-h-screen w-full">
