@@ -4,11 +4,11 @@ type Props = {};
 
 const Projects: React.FC<Props> = ({}) => {
   return (
-    <section className="wrapper " id="portfolio">
-      <div className="flex min-h-screen w-full items-center">
+    <section className="wrapper" id="portfolio">
+      <div className=" flex min-h-screen w-full items-center  pb-20">
         <Project />
       </div>
-      <div className="flex min-h-screen w-full items-center">
+      <div className="flex min-h-screen w-full items-center  pb-20">
         <Project />
       </div>
     </section>

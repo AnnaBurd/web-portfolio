@@ -37,33 +37,30 @@
 body {
   color: rgb(var(--text-rgb));
   background: rgb(var(--background-rgb));
-  /* font-size: calc(15px + 0.390625vw); */
 }
 
 /* Container wrapper, controls maximum width of page content (an alternative approach would be to use grid ) */
 .wrapper {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 6rem;
 }
 
+/* Spacing between two columns layout */
 .gap-x {
   column-gap: clamp(1.5rem /* 24px */, 10vw, 20rem /* 320px */);
 }
 
-/* Style scrollbars */
-
-body {
-  scrollbar-gutter: stable;
-  overflow-y: scroll;
+/* Headings font sizes */
+h1 {
+  font-size: clamp(1.5rem, 5vw, 4rem);
 }
 
-/* Style text selection */
-
-html {
-  scroll-behavior: smooth;
+h2 {
+  font-size: clamp(1.2rem, 4vw, 3.6rem);
 }
 
+/* Style highlighed elements (like marker highlight) */
 .highlight {
   position: relative;
   display: inline-block;
@@ -78,4 +75,25 @@ html {
   inset: 53% -6px 10% 4%;
   background: var(--color-link-highlight);
   z-index: -1;
+}
+
+/* Style text selection */
+::selection {
+  background: var(--color-link-highlight);
+}
+
+/* Style scrollbars and scroll behaviour */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
 }
