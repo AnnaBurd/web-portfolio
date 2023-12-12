@@ -1,4 +1,4 @@
 ---
 previewUrl: example.com
-previewImg: /images/mokup-1.jpeg
+previewImg: /images/work/translator-app/mockup.png
 ---
