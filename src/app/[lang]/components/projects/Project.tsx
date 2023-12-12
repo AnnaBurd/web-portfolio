@@ -63,18 +63,20 @@ const Project: React.FC<Props> = ({ data, lang }) => {
         </div>
       </div>
 
-      <div className=" col-start-2 row-start-1 row-end-3 place-self-center ">
+      <div className=" col-start-2 row-start-1 row-end-3 flex h-full w-full items-center place-self-center ">
         <Link
           href={`${lang}/work/${data.slug}`}
-          className={`${styles.preview} group relative`}
+          className={`${styles.preview} group relative block h-full max-h-[27rem] w-full  `}
         >
-          <span className="block transform-gpu transition-all duration-300 ease-in-out before:absolute   before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
+          <span className="relative block h-full  w-full  transform-gpu transition-all duration-300 ease-in-out before:absolute before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
             <Image
               src={data.previewImg}
               alt={`A mokup of the ${data.title} project`}
-              width={400}
-              height={400}
-              className=" "
+              className=""
+              sizes="(min-width: 768px) 50vw,(min-width: 1536px) 500px,  100vw" // TODO: adjust sizes after responsive layout
+              style={{ objectFit: "contain" }}
+              quality={100}
+              fill
             />
           </span>
           <div className="absolute bottom-[-1.8rem] left-[-1.9rem] h-[45%]   text-[rgb(var(--text-rgb))] opacity-30">
