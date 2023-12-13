@@ -1,0 +1,88 @@
+.markdown-body {
+  /* background-color: blueviolet; */
+}
+
+.markdown-body h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+/* .markdown-body pre {
+  background-color: violet;
+  padding: 40px;
+  margin: 40px;
+} */
+
+.markdown-body img {
+  background-color: red;
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 3px double #333;
+  color: #333;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+}
+
+.markdown-body hr:after {
+  background: #fff;
+  content: "§";
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
+}
+
+.markdown-body ol {
+  /* background-color: aqua; */
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+.markdown-body ul:not(.contains-task-list) {
+  /* background-color: blue; */
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body .footnotes {
+  background-color: green;
+}
+
+.markdown-body #footnote-label {
+  background-color: aqua;
+  font-size: small;
+}
+
+.markdown-body a[data-footnote-backref] {
+  background-color: pink;
+}
+
+.markdown-body code {
+  background-color: #0366d6;
+}
+
+.markdown-body code .linenumber {
+  background-color: #0366d6;
+  visibility: hidden;
+  /* width: 1px !important; */
+  /* padding: 0 !important; */
+  /* display: none !important; */
+}
+
+.markdown-body table {
+  background-color: #0366d6;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  font-size: 14px;
+  overflow: auto;
+  width: 100%;
+}
