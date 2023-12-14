@@ -8,7 +8,7 @@ import Dots from "./Dots";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 import styles from "./Project.module.css";
-import { ProjectData } from "./Model";
+import { ProjectData } from "../../../Model";
 import { Locale } from "@/app/i18n/i18n-config";
 
 type Props = {

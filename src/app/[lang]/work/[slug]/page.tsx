@@ -35,15 +35,24 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
             {projectData.frontmatterData.introduction}
           </p>
 
-          <Link
-            href={projectData.frontmatterData.previewUrl}
-            className="relative mt-6"
-          >
-            visit live site &nbsp;&nbsp;&nbsp;
-            <span className="absolute -right-0.5 top-1/2 -translate-y-1/2">
-              <ArrowRight size={16} weight="regular" />
-            </span>
-          </Link>
+          <div className="mt-6">
+            <Link
+              href={projectData.frontmatterData.repositoryUrl}
+              className="mr-6"
+            >
+              github repo
+            </Link>
+
+            <Link
+              href={projectData.frontmatterData.previewUrl}
+              className="relative"
+            >
+              visit live site &nbsp;&nbsp;&nbsp;
+              <span className="absolute -right-0.5 top-1/2 -translate-y-1/2">
+                <ArrowRight size={16} weight="regular" />
+              </span>
+            </Link>
+          </div>
         </div>
 
         <div className="mx-auto h-80 w-2/3 bg-slate-500">image</div>

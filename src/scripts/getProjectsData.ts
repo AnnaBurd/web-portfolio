@@ -1,4 +1,4 @@
-import { ProjectFrontmatter } from "@/app/[lang]/components/projects/Model";
+import { ProjectFrontmatter } from "@/app/Model";
 import { Locale } from "@/app/i18n/i18n-config";
 import fs from "fs";
 import matter from "gray-matter";
