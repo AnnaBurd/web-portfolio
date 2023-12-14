@@ -55,7 +55,7 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
           </div>
         </div>
 
-        {/* <div className="mx-auto h-[80vh] w-2/3 bg-slate-500">image</div> */}
+        <div className="mx-auto h-[80vh] w-2/3 bg-slate-500">image</div>
 
         <div className="mx-auto w-2/3">
           <Markdown>{projectData.content}</Markdown>
