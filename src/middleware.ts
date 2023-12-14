@@ -61,7 +61,7 @@ export const config = {
     // Skip all internal paths (_next)
     // "/((?!_next).*)",
     // "/((?!api|_next/static|_next/image|favicon.ico|images).*)",
-    "/((?!api|_next/static|_next/image|favicon.ico|images|static|_ipx).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|images|vectors|static|_ipx).*)",
     // Optional: only run on root (/) URL
     // "/",
   ],

@@ -3,12 +3,13 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import vscDarkPlus from "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus";
 import remarkGfm from "remark-gfm";
 
-// import rangeParser from "parse-numeric-range";
+import "./markdown.sass";
 
 import Image from "next/image";
 
-import "./markdown.css";
 import { CopyButton } from "./CopyButton";
+
+import { fontMono, fontPrimary, fontSecondary } from "@/app/fonts";
 
 type Props = {
   children: string;
@@ -30,7 +31,7 @@ const Markdown: React.FC<Props> = ({ children }) => {
   return (
     <ReactMarkdown
       remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
-      className={"markdown-body"}
+      className={`markdown-body ${fontSecondary.variable} ${fontPrimary.variable} ${fontMono.variable}`}
       components={{
         code(props) {
           const { children, className, node, ref, ...rest } = props;
@@ -49,8 +50,8 @@ const Markdown: React.FC<Props> = ({ children }) => {
           }
           return match ? (
             <div className="relative">
-              <div className="absolute top-0 inline-flex w-full justify-between px-4 pt-2 text-white">
-                <span>{match[1]}</span>
+              <div className="absolute top-0 inline-flex w-full justify-between px-4 pt-2 text-sm text-white">
+                <span className="select-none">{match[1]}</span>
 
                 <CopyButton textContent={String(children).replace(/\n$/, "")} />
               </div>
@@ -83,22 +84,31 @@ const Markdown: React.FC<Props> = ({ children }) => {
           );
         },
         img(props) {
-          // Do not use next/image for external images
-          if (props.src?.startsWith("http") || !props.src)
-            // eslint-disable-next-line @next/next/no-img-element
-            return <img src={props.src} alt={props.alt} />;
-
           // Parse width and height from the image alt text, e.g. [alt text {100x100}](url)
           const width = props.alt?.match(/(?<={)\d+(?=x)/)?.[0];
           const height = props.alt?.match(/(?<=x)\d+(?=})/)?.[0];
+
+          const alt = props.alt?.replace(/\{.*\}/, "").trim();
+
+          // Do not use next/image for external images
+          if (props.src?.startsWith("http") || !props.src)
+            return (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={props.src}
+                alt={alt}
+                width={width || "100%"}
+                height={height || "100%"}
+              />
+            );
 
           // Use Next <Image /> to optimize image size
           return (
             <Image
               src={props.src}
-              alt={props.alt || "Default alt text"}
-              width={width ? parseInt(width) : "600"}
-              height={height ? parseInt(height) : "300"}
+              alt={alt || "Default alt text"}
+              width={width ? parseInt(width) : "900"}
+              height={height ? parseInt(height) : "600"}
               title={props.title}
             />
           );

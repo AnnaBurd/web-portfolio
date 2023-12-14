@@ -7,162 +7,87 @@ tags:
   - Concept
 ---
 
----
+[logo]: https://raw.githubusercontent.com/AnnaBurd/translator-app-ts-front/492b9d9e7c1deacd02e615f8c5ffb2988676da7e/public/icon.svg "Logo Title Text 1"
 
-# h1 Heading
+> Empowered by advanced AI model APIs (Open AI / Azure), this application facilitates seamless translations of technical documentation based on context.
 
-## h2 Heading
-
-### h3 Heading
-
-#### h4 Heading
-
-##### h5 Heading
-
-###### h6 Heading
+The translator app is an essential tool for businesses that require accurate translations of technical documentation. While popular text translation tools like Google Translate and commercial deep-learning-based solutions are effective for common `communication topics`, they often fall short when it comes to less commonly used languages or highly specialized terminology. 🤔➡️🚀
 
 ---
 
-like italic - emp: _sdf empasis ds_
+For instance, the bi-lingual international company the application was initially designed for requires all technical documents to be provided in both Russian **and Vietnamese languages**. Unfortunately, existing translation tools frequently produce unreadable gibberish due to the narrow-field terminology involved. This results in a significant amount of manual labor being required on what should otherwise be an automatable task.
 
-hg **strong**
+To address this issue, we have developed an AI-powered application designed specifically for enhancing the accuracy of translations by utilizing private databases with pre-existing samples from various fields and industries. By doing so, we can significantly improve efficiency while also reducing costs associated with manual corrections - ultimately providing better quality `service overall`!
 
-**strong and _empasis (\<em\/\>)_**
+[**View Live** _(\* might requre a few minutes to warm up server)_](https://translatorai.tech/ "Translator App")
 
-~~Strikethroug~~
+## Key Features
 
----
+I should _say_ that ![alt text {150x150}][logo]
 
-1. Create a list by starting a line with `-` (unordered list) or `1.` (ordered list)
-   1. Sub-lists are made by indenting 2 spaces
-   2. fsdfsdf
-      - sdfsdfsdf
-2. sdfsdfsdf
-3. dsfsdfdsf
-   - sdfsdfsdf
-   - dsfsdfsdf
-     - sdfdsf
-4. sdfsdf
+dsfsdfsdfsdfsdf sdf sdf sdf
 
----
+- Private dataset of translation samples within a `vector database`
+- Versatile cloud and local file storage optionsc
+- Robust security ensured through JWT-based authentication and role-specific authorization
+  1. sdfdsf
+  2. sdfdsfsdf
+  3. dsfsdfsd
+- Comprehensive user profile system that allows to easily reset password, change email address and other personal information
+- Automated email notifications
+- Set up to run in any environment within docker container
 
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+## Build with
 
----
+![TypeScript {100x100}](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![NodeJS {100x100}](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js {100x100}](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![JWT {100x100}](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![MongoDB {100x100}](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![TensorFlow {100x100}](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
+![Azure {100x100}](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Docker {100x100}](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Postman {100x100}](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Swagger {100x100}](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 
-Escape md with \ \*our-new-project\* to \*our-old-project\*.
+## Installation
 
----
+Add `.env` file on place of the `.env.example` file in the root folder and fill in secret api/database tokens.
 
-[I'm an inline-style link](https://www.google.com)
+Linux & Windows:
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+```bash {3..4}
+npm install     # Install dependencies
+npm run dev     # Run in development mode
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[1]: http://sdfsdf.org
-
-[You can use numbers for reference-style link definitions][1]
-
----
-
-Inline: ![alt text](/images/work/translator-app/mockup.png "Logo Title Text 1")
-
-[logo]: /images/work/translator-app/mockup.png "Logo Title Text 2"
-
-Reference (before or later both ok): ![alt text {50x50}][logo]
-
----
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Duplicated footnote reference[^second].
-
-<!-- Footnots themselves fill be at the bottom of the page: -->
-
-[^first]:
-    Footnote - this footnote will be shown below the page **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text (second footnote).
-[^myfn]: My footnote text (third footnote).
-
-And here is my[^myfn] link.
-
----
-
-Inline `code` has `back-ticks around` it.
-
-```css {3..6,8}
-/* css */
-@font-face {
-  font-family: Chunkfive;
-  src: url("Chunkfive.otf");
-}
-
-body,
-.usertext {
-  color: #f0f0f0;
-  background: #600;
-  font-family: Chunkfive, sans;
-}
-
-@import url(print.css);
-@media print {
-  a[href^="http"]::after {
-    content: attr(href);
-  }
-}
+npm run build   # Build production version
+npm start       # Run
 ```
 
----
+Docker:
 
-| Left-aligned | Center-aligned | Right-aligned |
-| :----------- | :------------: | ------------: |
-| git status   |   git status   |    git status |
-| git diff     |    git diff    |      git diff |
+```bash {3}
+# Build files
+npm run build
 
----
+# Build docker image
+docker build -t <any-image-name:tag> .
 
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
+# Push image to the docker hub
+docker tag <any-image-name:tag> <docker-username>/<any-image-name:tag>
+docker push <docker-username>/<any-image-name:tag>
 
-Quote break.
+# Run docker container using image, locally or on hosting
+# When running container, make sure to expose port that is specified in the .env PORT variable, and to update api URL on the frontend side
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
-
-> Blockquotes can also be nested...
->
-> > by using additional greater-than signs right next to each other...
-> >
-> > > or with spaces between arrows.
-
----
-
-```html
-<dl>
-  <dt>Inline HTML</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
 ```
 
-<dl>
-  <dt>Inline HTML</dt>
-  <dd>Is something people use sometimes.</dd>
+This will run the backend (api) part of the application, the frontend (client) is [here](https://github.com/AnnaBurd/translator-app-ts-front)
 
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
+## Wrapping up
 
----
+This is my very-first tutorial on Next.js! 🍾
+
+I've been using Next.js to build a custom platform for my upcoming course, CSS for JavaScript Developers. It's a course specifically for JS developers who struggle with CSS. I know from experience that CSS becomes a lot more fun once you get comfortable with it, and being able to switch effortlessly between JS and CSS is absolutely wonderful. Follow the link to learn more!
+
+Special thanks to Brandon for the router-based solution! Brandon's working on Blitz.js, an exciting framework built on top of Next.js that aims to recreate the Rails experience, and I'm super excited to see where it goes 💯
