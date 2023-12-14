@@ -15,14 +15,14 @@ export const CopyButton: React.FC<Props> = ({ textContent }) => {
 
     setTimeout(() => {
       setIsCopied(false);
-    }, 10000);
+    }, 3000);
   };
 
   return (
     <button
       disabled={isCopied}
       onClick={copy}
-      className="transition-opacity duration-200 hover:opacity-60"
+      className="transition-opacity duration-200 hover:opacity-70"
     >
       {isCopied ? "copied!" : "copy"}
     </button>

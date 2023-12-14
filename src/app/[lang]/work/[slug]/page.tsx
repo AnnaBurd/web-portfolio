@@ -15,11 +15,11 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
   const projectData = getProjectData(params.slug, params.lang);
 
   return (
-    <section className=" flex min-h-screen w-full overflow-x-hidden">
+    <article className=" flex min-h-screen w-full overflow-x-hidden">
       <div className=" absolute inset-6 z-0 bg-[--background-accent]"></div>
 
       <div className="wrapper z-10  ">
-        <div className="mb-44 mt-44 flex flex-col items-center text-center ">
+        <div className=" mb-20 mt-44 flex flex-col items-center text-center ">
           <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest opacity-30">
             PROJECT SHOWCASE
           </h4>
@@ -55,24 +55,26 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
           </div>
         </div>
 
-        <div className="mx-auto h-80 w-2/3 bg-slate-500">image</div>
+        {/* <div className="mx-auto h-[80vh] w-2/3 bg-slate-500">image</div> */}
 
         <div className="mx-auto w-2/3">
           <Markdown>{projectData.content}</Markdown>
         </div>
-        <div className="text-center">
-          Last Updated:{" "}
-          {new Date(projectData.frontmatterData.editedAt).toLocaleDateString(
-            params.lang,
-            {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            },
-          )}
+        <div className=" mx-auto mb-20 mt-10 w-2/3 text-base font-medium italic opacity-70">
+          Last updated:{" "}
+          <span className="font-bold">
+            {new Date(projectData.frontmatterData.editedAt).toLocaleDateString(
+              params.lang,
+              {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              },
+            )}
+          </span>
         </div>
       </div>
-    </section>
+    </article>
   );
 };
 

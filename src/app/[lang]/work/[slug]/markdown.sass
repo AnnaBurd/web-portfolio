@@ -1,0 +1,155 @@
+.markdown-body
+
+    // Headings ----------------------------
+    h1, h2, h3
+        text-align: center
+
+    h1, h2
+        // font-family: var(--font-secondary)
+        @apply mt-20
+
+    h2
+        color: var(--color-btn-active)
+        @apply text-3xl font-bold mb-6
+
+    // Paragraphs --------------------------
+    p
+        @apply text-base leading-relaxed tracking-wide mb-3
+
+    // Links --------------------------------
+    a
+        color: var(--color-btn-active)
+        text-decoration: none
+        &:hover
+            text-decoration: underline
+
+    // Blockquotes -------------------------
+    blockquote
+        border-color: var(--color-btn-active)
+        text-wrap: balance
+        @apply border-s-4 ps-3 italic font-semibold tracking-tight
+
+    // Images -------------------------------
+    img
+        margin: 1rem auto
+
+    // TODO: adjust if used, or remove
+    p:has(img:not(:only-child)):has(em,p,strong)
+        // background-color: red
+        display: inline-flex
+        align-items: center
+        gap: 0.25rem
+        img
+            width: 2em
+            height: 2em
+
+    // Multiple images in a single paragraph 
+    p:has(img:not(:only-child)):not(:has(em,p,strong))
+        // background-color: blue
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr))
+        gap: 0.25rem
+        row-gap: 0rem
+        align-items: center
+        justify-items: center
+        justify-content: center
+        img
+            margin: 0
+            padding: 0
+
+    // Separator line -----------------------
+    hr
+        margin: 2em 4rem
+        border: 0
+        height: 1px
+        background: var(--color-btn-active)
+        background-image: linear-gradient(to right, var(--background-accent), var(--color-btn-active), var(--background-accent))
+
+    // Lists --------------------------------
+
+    ol, ul
+        li
+            // background-color: var(--background-accent)
+            margin-bottom: 0.75rem
+
+    ul ol, ol ul
+            margin-top: 0.75rem
+            margin-left: 2rem
+
+    ol
+        list-style: decimal
+        padding-left: 1rem
+
+    ul:not(.contains-task-list)
+        // list-style: disc url('/vectors/list-item-disc.svg')
+        list-style: none
+        // padding-left: 1rem
+
+        &>li::before
+            content: ""
+            display: inline-block
+            height: 0.65em
+            width: 0.65em
+            padding-right: 1em
+            background-image: url("/vectors/list-item-disc.svg")
+            background-repeat: no-repeat
+            background-size: contain
+            // background-position: left center
+
+    ul.contains-task-list
+        background-color: pink
+
+    // Tables -------------------------------
+    // TODO: after used
+    table
+        border-collapse: collapse
+        border-spacing: 0
+        width: 100%
+        overflow: auto
+        margin: 1em 0
+        font-size: 0.9em
+        line-height: 1.6
+        border-radius: 0.3em
+        overflow: hidden
+        box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1)
+        th
+            font-weight: bold
+        th, td
+            padding: 0.5em 1em
+            border: 1px solid var(--color-btn-active)
+            &:first-child
+                border-left: 0
+            &:last-child
+                border-right: 0
+            &:nth-child(odd)
+                background-color: var(--background-accent)
+
+    // Footnotes ----------------------------
+    // TODO: after used
+    .footnotes
+        background-color: green
+
+    #footnote-label
+        font-size: medium
+
+    // Code ---------------------------------
+
+    // Inline code
+    p code
+        display: inline-block
+        background-color: var(--background-accent)
+        font-family: var(--font-primary)
+        padding: 0.1em 0.3em
+        font-size: 0.95em
+        transform: translateY(0.034em)
+
+    // Code blocks
+    pre div div:has(code)
+        padding-top: 2.25rem !important
+
+    pre code
+        font-family: var(--font-mono) !important
+        font-size: 0.95em !important
+
+    .linenumber
+        visibility: hidden
