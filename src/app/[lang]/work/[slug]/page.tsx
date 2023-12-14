@@ -51,6 +51,17 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
         <div className="mx-auto w-2/3">
           <Markdown>{projectData.content}</Markdown>
         </div>
+        <div className="text-center">
+          Last Updated:{" "}
+          {new Date(projectData.frontmatterData.editedAt).toLocaleDateString(
+            params.lang,
+            {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            },
+          )}
+        </div>
       </div>
     </section>
   );
