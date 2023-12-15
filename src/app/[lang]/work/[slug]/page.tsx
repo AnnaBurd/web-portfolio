@@ -16,7 +16,7 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
 
   return (
     <article className=" flex min-h-screen w-full overflow-x-hidden">
-      <div className=" absolute inset-6 z-0 bg-[--background-accent]"></div>
+      <div className=" absolute inset-[--inset] z-0 bg-[--background-accent]"></div>
 
       <div className="wrapper z-10  ">
         <div className=" mb-20 mt-44 flex flex-col items-center text-center ">

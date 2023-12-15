@@ -18,7 +18,7 @@ type Props = {
 
 const Project: React.FC<Props> = ({ data, lang }) => {
   return (
-    <article className="gap-x  grid grid-cols-2">
+    <article className="gap-x  4xl:grid-cols-2 grid py-10 ">
       <div className="pointer-events-none">
         <h4 className="mb-1 text-sm font-medium uppercase tracking-wide opacity-30">
           Latest work
@@ -30,11 +30,11 @@ const Project: React.FC<Props> = ({ data, lang }) => {
         >
           {data.title}
         </h2>
-        <div className="mb-8 flex gap-2">
+        <div className="mb-8 flex flex-wrap gap-2">
           {data.tags.map((tag) => (
             <div
               key={tag}
-              className="bg-[--background-accent] px-2.5 py-1 text-xs font-bold tracking-wide "
+              className="whitespace-nowrap bg-[--background-accent] px-2.5 py-1 text-xs font-bold tracking-wide"
             >
               {tag}
             </div>
@@ -63,7 +63,7 @@ const Project: React.FC<Props> = ({ data, lang }) => {
         </div>
       </div>
 
-      <div className=" col-start-2 row-start-1 row-end-3 flex h-full w-full items-center place-self-center ">
+      <div className=" 4xl:col-start-2 4xl:row-start-1 4xl:row-end-3 4xl:place-self-center 4xl:h-full 4xl:w-full row-start-2  mb-10 flex h-[clamp(16rem,35vh,30rem)] items-center">
         <Link
           href={`${lang}/work/${data.slug}`}
           className={`${styles.preview} group relative block h-full max-h-[27rem] w-full  `}
@@ -79,7 +79,7 @@ const Project: React.FC<Props> = ({ data, lang }) => {
               fill
             />
           </span>
-          <div className="absolute bottom-[-1.8rem] left-[-1.9rem] h-[45%]   text-[rgb(var(--text-rgb))] opacity-30">
+          <div className="absolute bottom-[-1.8rem] left-[-1.9rem] h-[45%]   min-h-[12rem] text-[rgb(var(--text-rgb))] opacity-30">
             <Dots />
           </div>
           <div

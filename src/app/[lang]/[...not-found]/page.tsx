@@ -6,7 +6,7 @@ import Link from "@/app/components/ui/Link";
 export default function NotFound() {
   return (
     <section className="relative flex min-h-screen w-full">
-      <div className=" absolute inset-6 z-0 bg-[--background-accent]"></div>
+      <div className=" absolute inset-[--inset] z-0 bg-[--background-accent]"></div>
       <div className="wrapper  z-10 flex w-full items-center justify-stretch ">
         <div className="absolute top-24 -mt-2 mb-1 text-lg font-semibold uppercase tracking-widest opacity-30">
           404

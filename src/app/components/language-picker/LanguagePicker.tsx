@@ -50,16 +50,19 @@ export default function LanguagePicker({ currentLang }: Props) {
   };
 
   return (
-    <Menu as="div" className="relative inline-block min-w-[4rem] text-right">
-      <Menu.Button className="text-small   justify-center    font-medium      focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+    <Menu
+      as="div"
+      className="relative z-0 inline-block min-w-[4rem] -translate-y-[1px] text-right text-base "
+    >
+      <Menu.Button className="justify-center font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
         {({ open }) => {
           return (
             <span
-              className={`inline-flex w-full   items-center gap-[.2rem]  px-3  py-1.5 pr-2 transition-colors duration-150 ease-in-out hover:bg-[--color-btn]  ${
+              className={`inline-flex w-full   items-center gap-1  px-3  py-1.5 pr-2 uppercase transition-colors duration-150 ease-in-out hover:bg-[--color-btn]  ${
                 open ? "bg-[--color-btn]" : ""
               }`}
             >
-              {currentLang.toUpperCase()}
+              {currentLang}
               <ChevronDownIcon
                 className={`  h-3.5 w-3.5 origin-center transition-transform duration-100 ease-out    ${
                   open ? " -translate-y-[1px] rotate-180" : ""

@@ -40,10 +40,37 @@ body {
 }
 
 /* Container wrapper, controls maximum width of page content (an alternative approach would be to use grid ) */
+
+:root {
+  /* White paddings around background */
+  --inset: 1rem;
+}
+
+/* Wrapper (container) div */
 .wrapper {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 6rem;
+  padding: 0 calc(var(--inset) * 2);
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 0 8vw;
+  }
+
+  :root {
+    --inset: 1.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  /* :root {
+    --inset: 1.5rem;
+  } */
+
+  .wrapper {
+    padding: 0 6rem;
+  }
 }
 
 /* Spacing between two columns layout */
@@ -53,11 +80,11 @@ body {
 
 /* Headings font sizes */
 h1 {
-  font-size: clamp(1.5rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 5vw, 4rem);
 }
 
 h2 {
-  font-size: clamp(1.2rem, 4vw, 3.6rem);
+  font-size: clamp(1.5rem, 4vw, 3.6rem);
 }
 
 /* Style highlighed elements (like marker highlight) */
@@ -80,6 +107,11 @@ h2 {
 /* Style text selection */
 ::selection {
   background: var(--color-link-highlight);
+}
+
+html {
+  /* Disable blue tap highlight on mobile devices */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Style scrollbars and scroll behaviour */
