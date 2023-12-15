@@ -1,10 +1,10 @@
 import "../globals.css";
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import Footer from "../components/Footer";
 import { fontPrimary } from "../fonts";
 
 import { Locale, locales } from "../i18n/i18n-config";
-import ContactsBar from "../components/ContactsBar";
+import ContactsBar from "../components/contacts/ContactsBar";
 import SplashScreen from "../components/splash-screen/SplashScreen";
 
 // Return a list of `params` to populate the [lang] dynamic segment
