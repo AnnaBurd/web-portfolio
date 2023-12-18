@@ -116,7 +116,8 @@ html {
 
 /* Style scrollbars and scroll behaviour */
 html {
-  scroll-behavior: smooth;
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
