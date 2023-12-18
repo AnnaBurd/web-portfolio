@@ -8,8 +8,8 @@
 
   cursor: pointer;
   display: flex;
-  font-size: 16px;
-  height: 48px;
+  font-size: 0.85rem;
+  height: 40px;
   justify-content: center;
   line-height: 24px;
   /* max-width: 100%; */
@@ -29,7 +29,7 @@
   /* border-radius: 8px; */
   content: "";
   display: block;
-  height: 48px;
+  height: 40px;
   left: 0;
   width: 100%;
   position: absolute;
@@ -55,6 +55,12 @@
 @media (min-width: 768px) {
   .button {
     padding: 0 40px;
+    font-size: 1rem;
+    height: 48px;
+  }
+
+  .button:after {
+    height: 48px;
   }
 }
 
