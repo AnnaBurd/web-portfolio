@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "../ui/Link";
 import { Locale } from "@/app/i18n/i18n-config";
 
@@ -13,14 +13,25 @@ type Props = {
 const Navbar: React.FC<Props> = ({ lang }) => {
   const pathname = usePathname();
 
+  // console.log(window.location.href, window.location.origin);
+
   const homePathRe = /^\/(en|vi|ru)?$/i;
   const pathWithLocaleRe = /^\/(en|vi|ru)\//i;
 
-  const portfolioPath = homePathRe.test(pathname)
-    ? "#portfolio"
-    : pathWithLocaleRe.test(pathname)
-      ? `/${lang}#portfolio`
-      : "/#portfolio";
+  let portfolioPath = "#portfolio";
+
+  if (!homePathRe.test(pathname)) {
+    if (pathWithLocaleRe.test(pathname)) {
+      portfolioPath = `/${lang}#portfolio`;
+    } else {
+      portfolioPath = "/#portfolio";
+    }
+
+    // Note: Next JS app router has a bug? navigating to a path with /#hash does not trigger scroll to the element with id=hash, when navigating from a different page a SECOND time. The first time works fine. This is a workaround, which helps but the issue still persists for n-th time navigation.
+    if (window) {
+      portfolioPath = window.location.origin + portfolioPath;
+    }
+  }
 
   const links = [
     { path: portfolioPath, text: "my work" },
@@ -33,7 +44,12 @@ const Navbar: React.FC<Props> = ({ lang }) => {
 
       <nav className="mr-0.5 max-md:hidden">
         {links.map((link) => (
-          <Link href={link.path} className="mx-4 " key={link.path}>
+          <Link
+            href={link.path}
+            className="mx-4 "
+            key={link.path}
+            scroll={true}
+          >
             {link.text}
           </Link>
         ))}
