@@ -28,7 +28,7 @@ const Navbar: React.FC<Props> = ({ lang }) => {
     }
 
     // Note: Next JS app router has a bug? navigating to a path with /#hash does not trigger scroll to the element with id=hash, when navigating from a different page a SECOND time. The first time works fine. This is a workaround, which helps but the issue still persists for n-th time navigation.
-    if (window) {
+    if (typeof window !== "undefined") {
       portfolioPath = window.location.origin + portfolioPath;
     }
   }
