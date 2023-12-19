@@ -1,4 +1,5 @@
 .markdown-body
+    width: 100%
 
     // Headings ----------------------------
     h1, h2, h3
@@ -144,6 +145,15 @@
         transform: translateY(0.034em)
 
     // Code blocks
+    pre:has(code)
+        width: calc(100vw - var(--padding) *2 ) // Fit code blocks on small screens
+
+    @media (min-width: 768px)
+        pre:has(code)
+            width: 100%
+
+    pre:has(code) div
+
     pre div div:has(code)
         padding-top: 2.25rem !important
 

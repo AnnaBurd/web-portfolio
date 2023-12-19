@@ -19,7 +19,7 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
       <div className=" absolute inset-[--inset] z-0 bg-[--background-accent]"></div>
 
       <div className="wrapper z-10  ">
-        <div className=" mb-20 mt-44 flex flex-col items-center text-center ">
+        <div className=" mb-6 mt-44 flex flex-col items-center text-center md:mb-20 ">
           <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest opacity-30">
             PROJECT SHOWCASE
           </h4>
@@ -55,12 +55,28 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
           </div>
         </div>
 
-        <div className="mx-auto h-[80vh] bg-slate-500 md:w-2/3">image</div>
+        <div className="mb-10 w-full overflow-hidden rounded-sm  opacity-[0.99] shadow-xl md:mx-auto md:mb-20 md:w-2/3">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            width="100%"
+            height="auto"
+            className=""
+          >
+            <source
+              src={projectData.frontmatterData.previewAsset}
+              type="video/mp4"
+            />
+          </video>
+        </div>
 
-        <div className="mx-auto md:w-2/3">
+        <div className="w-full overflow-x-hidden md:mx-auto md:w-2/3">
           <Markdown>{projectData.content}</Markdown>
         </div>
-        <div className=" mx-auto mb-20 mt-10 w-2/3 text-base font-medium italic opacity-70">
+        <div className=" mb-20 mt-10 w-full text-sm font-medium  italic opacity-70 md:mx-auto md:w-2/3 md:text-center md:text-base">
           Last updated:{" "}
           <span className="font-bold">
             {new Date(projectData.frontmatterData.editedAt).toLocaleDateString(
