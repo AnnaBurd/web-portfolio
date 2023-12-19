@@ -31,7 +31,7 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
           >
             {projectData.frontmatterData.title}
           </h2>
-          <p className=" my-auto max-w-prose text-base leading-relaxed tracking-wide [text-wrap:balance]">
+          <p className=" my-auto max-w-prose text-base leading-7 opacity-80 [text-wrap:balance] md:text-lg md:leading-loose">
             {projectData.frontmatterData.introduction}
           </p>
 
@@ -55,9 +55,9 @@ const ProjectPage: React.FC<Props> = ({ params }) => {
           </div>
         </div>
 
-        <div className="mx-auto h-[80vh] w-2/3 bg-slate-500">image</div>
+        <div className="mx-auto h-[80vh] bg-slate-500 md:w-2/3">image</div>
 
-        <div className="mx-auto w-2/3">
+        <div className="mx-auto md:w-2/3">
           <Markdown>{projectData.content}</Markdown>
         </div>
         <div className=" mx-auto mb-20 mt-10 w-2/3 text-base font-medium italic opacity-70">

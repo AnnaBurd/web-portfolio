@@ -35,7 +35,7 @@ const Footer: React.FC<Props> = ({}) => {
             </Link>
           </p>
         </div>
-        <div className="text-sm opacity-40">
+        <div className="text-xs opacity-40 md:text-sm">
           © Anna Burdanova, 2022 - {new Date().getFullYear()}
         </div>
       </div>

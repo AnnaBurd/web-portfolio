@@ -75,7 +75,7 @@ body {
 
 /* Spacing between two columns layout */
 .gap-x {
-  column-gap: clamp(2rem, 6.5vw, 16rem /* 320px */);
+  column-gap: clamp(2rem, 8vw, 6rem /* 320px */);
 }
 
 /* Headings font sizes */

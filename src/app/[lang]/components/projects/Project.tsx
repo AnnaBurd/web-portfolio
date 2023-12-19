@@ -49,35 +49,37 @@ const Project: React.FC<Props> = ({ data, lang }) => {
         <div className="pointer-events-auto mt-6 flex gap-4 md:mt-8 ">
           <ButtonLink
             href={`${lang}/work/${data.slug}`}
-            className="min-w-[7.5rem] lg:min-w-[9rem]"
+            className="min-w-[7.5rem] !px-4 lg:min-w-[9rem]"
           >
             About
           </ButtonLink>
           <ButtonLink
             href={data.previewUrl}
             kind="secondary"
-            className="min-w-[7.5rem] lg:min-w-[9rem]"
+            className="min-w-[7.5rem] !px-4 lg:min-w-[9rem]"
           >
             View live
           </ButtonLink>
         </div>
       </div>
 
-      <div className=" row-start-2 mb-11 flex h-[clamp(16rem,35vh,30rem)] items-center md:col-start-2  md:row-start-1 md:row-end-3 md:mb-0 md:h-full md:w-full md:place-self-center">
+      <div className=" row-start-2 mb-11 flex h-[clamp(20rem,35vh,28rem)] items-center md:col-start-2  md:row-start-1 md:row-end-3 md:mb-0 md:h-full md:w-full md:place-self-center">
         <Link
           href={`${lang}/work/${data.slug}`}
           className={`${styles.preview} group relative block h-full max-h-[27rem] w-full  `}
         >
-          <span className="relative block h-full  w-full  transform-gpu transition-all duration-300 ease-in-out before:absolute before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
-            <Image
-              src={data.previewImg}
-              alt={`A mokup of the ${data.title} project`}
-              className=""
-              sizes="(min-width: 768px) 50vw,(min-width: 1536px) 500px,  100vw" // TODO: adjust sizes after responsive layout
-              style={{ objectFit: "contain" }}
-              quality={100}
-              fill
-            />
+          <span className=" @container block  h-full w-full transform-gpu transition-all duration-300 ease-in-out before:absolute before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
+            <span className="@xs:width-[95%]   relative mx-auto block h-full ">
+              <Image
+                src={data.previewImg}
+                alt={`A mokup of the ${data.title} project`}
+                // className="@md:![object-position:center_42%]"
+                sizes="(min-width: 768px) 50vw,(min-width: 1536px) 600px,  100vw" // TODO: adjust sizes after responsive layout
+                style={{ objectFit: "cover", objectPosition: "center 38%" }}
+                quality={100}
+                fill
+              />
+            </span>
           </span>
           <div className="absolute bottom-[-1.5rem] left-[-1.5rem] h-[45%]   min-h-[10rem] text-[rgb(var(--text-rgb))] opacity-30  md:bottom-[-1.8rem] md:left-[-1.9rem]">
             <Dots />
