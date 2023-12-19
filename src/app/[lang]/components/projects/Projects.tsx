@@ -12,7 +12,7 @@ const Projects: React.FC<Props> = ({ lang }) => {
       {projects.map((project) => (
         <div
           key={project.slug}
-          className=" flex min-h-screen w-full items-center pb-20"
+          className=" flex w-full items-center pb-20 md:min-h-screen"
         >
           <Project data={project} lang={lang} />
         </div>
