@@ -3,7 +3,8 @@ export type ProjectFrontmatter = {
   introduction: string;
   previewUrl: string;
   repositoryUrl: string;
-  previewImg: string;
+  mockupAsset: string;
+  previewAsset: string;
   editedAt: string;
   tags: string[];
 };

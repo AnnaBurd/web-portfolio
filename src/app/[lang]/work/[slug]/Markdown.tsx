@@ -72,6 +72,7 @@ const Markdown: React.FC<Props> = ({ children }) => {
                     : {}
                 }
                 wrapLongLines={true}
+                // wrapLines={true}
                 style={vscDarkPlus}
               >
                 {String(children).replace(/\n$/, "")}

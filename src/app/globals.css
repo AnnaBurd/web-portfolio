@@ -44,32 +44,27 @@ body {
 :root {
   /* White paddings around background */
   --inset: 1rem;
+  --padding: calc(var(--inset) * 2);
 }
 
 /* Wrapper (container) div */
 .wrapper {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 calc(var(--inset) * 2);
+  padding: 0 var(--padding);
 }
 
 @media (min-width: 768px) {
-  .wrapper {
-    padding: 0 8vw;
-  }
-
   :root {
     --inset: 1.5rem;
+    --padding: 8vw;
   }
 }
 
 @media (min-width: 1536px) {
-  /* :root {
-    --inset: 1.5rem;
-  } */
-
-  .wrapper {
-    padding: 0 6rem;
+  :root {
+    /* --inset: 1.5rem; */
+    --padding: 6rem;
   }
 }
 
