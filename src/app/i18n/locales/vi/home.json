@@ -1,3 +1,16 @@
 {
-  "title": "Xin chao"
+  "h1": "Xin chào, em là Anna, <span class=\"highlight\">Web&nbsp;Developer</span> <br /> và chuyen giá <span class=\"highlight\">React</span>",
+  "intro": "Em là một lập trình viên web độc lập, tập trung vào việc tạo ra các trang web đẹp và chức năng cho các công ty trên toàn thế giới. Em sử dụng các công nghệ hiện đại như HTML5, CSS3, JavaScript, TypeScript, React, Next, Astro, Node, MongoDB và nhiều công nghệ khác.",
+
+  "about": {
+    "title": "Em <span class=\"highlight\">làm</span>",
+    "p1": {
+      "title": "Web Development",
+      "text": "Em tạo ra các trang web đẹp và chức năng cho các công ty trên toàn thế giới. Em sử dụng các công nghệ hiện đại như HTML5, CSS3, JavaScript, TypeScript, React, Next, Astro, Node, MongoDB và nhiều công nghệ khác."
+    },
+    "p2": {
+      "title": "UX/UI design",
+      "text": "Em tạo ra các trang web đẹp và chức năng cho các công ty trên toàn thế giới. Em sử dụng các công nghệ hiện đại như HTML5, CSS3, JavaScript, TypeScript, React, Next, Astro, Node, MongoDB và nhiều công nghệ khác."
+    }
+  }
 }

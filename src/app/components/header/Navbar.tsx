@@ -5,6 +5,7 @@ import Link from "../ui/Link";
 import { Locale } from "@/app/i18n/i18n-config";
 
 import MobileNavbar from "./MobileNavbar";
+import { useTranslation } from "@/app/i18n/client";
 
 type Props = {
   lang: Locale;
@@ -33,9 +34,11 @@ const Navbar: React.FC<Props> = ({ lang }) => {
     }
   }
 
+  const translation = useTranslation(lang, "common").t;
+
   const links = [
-    { path: portfolioPath, text: "my work" },
-    { path: "#footer", text: "get in touch" },
+    { path: portfolioPath, text: translation("nav.work") },
+    { path: "#footer", text: translation("nav.contacts") },
   ];
 
   return (

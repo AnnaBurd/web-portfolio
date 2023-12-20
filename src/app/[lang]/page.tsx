@@ -1,7 +1,6 @@
 import Hero from "./components/hero/Hero";
 import Projects from "./components/projects/Projects";
 import About from "./components/About";
-import { useTranslation } from "../i18n/server";
 import { Locale } from "../i18n/i18n-config";
 
 type Props = {
@@ -15,13 +14,11 @@ type Props = {
 // }
 
 export default async function Home({ params: { lang } }: Props) {
-  const { t } = await useTranslation(lang, "home");
-
   return (
     <main>
-      <Hero />
+      <Hero lang={lang} />
       <Projects lang={lang} />
-      <About />
+      <About lang={lang} />
     </main>
   );
 }

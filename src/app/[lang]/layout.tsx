@@ -31,7 +31,7 @@ export default function Layout({ children, params: { lang } }: Props) {
         <ContactsBar />
         <Header lang={lang} />
         {children}
-        <Footer />
+        <Footer lang={lang} />
       </body>
     </html>
   );

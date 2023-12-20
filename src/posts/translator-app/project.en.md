@@ -1,6 +1,7 @@
 ---
 title: "Geology Specialized AI Translator App"
 introduction: "Full website design and build for a concept team collaboration platform. This website also includes a beautiful blog. I have built the website and the blog in Webflow which has one of the best CMS for blog hosting."
+mainTag: latest work
 tags:
   - Website Design
   - Webflow develompent

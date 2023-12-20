@@ -19,10 +19,10 @@ const SmilingFace: React.FC<Props> = ({ isBlinking = true }) => {
       timer = setTimeout(
         () => {
           setBlinkDelay((prev) => {
-            return Math.floor(Math.random() * 25);
+            return Math.floor(Math.random() * 15);
           });
         },
-        (blinkDelay + blinkDuration + 5) * 1000, // Blink with interval 5-30 seconds
+        (blinkDelay + blinkDuration + 5) * 1000, // Blink with random intervals
       );
 
     return () => {
