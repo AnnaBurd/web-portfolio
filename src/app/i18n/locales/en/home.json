@@ -1,3 +1,16 @@
 {
-  "title": "Hello World!"
+  "h1": "Hi, I&apos;m Anna, <span class=\"highlight\">Web&nbsp;Developer</span> <br /> and <span class=\"highlight\">React</span> Specialist",
+  "intro": "I design and build beautiful websites for businesses around the globe. If you need a modern and powerful website, send me an email.",
+
+  "about": {
+    "title": "What <span class=\"highlight\">I do</span>",
+    "p1": {
+      "title": "Web Development",
+      "text": "I build websites using the latest technologies and best practices. I make sure that your website is fast, secure and easy to use."
+    },
+    "p2": {
+      "title": "Responsive Design",
+      "text": "I make sure that your website looks great on all devices. I use the latest technologies to make your website fast and responsive."
+    }
+  }
 }

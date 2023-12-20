@@ -1,6 +1,22 @@
 {
-  "title": "next-translate library",
   "en": "English",
   "ru": "Russian",
-  "vi": "Vietnamese"
+  "vi": "Vietnamese",
+
+  "nav": {
+    "work": "my work",
+    "contacts": "get in touch"
+  },
+
+  "btn": {
+    "work": "See my work",
+    "about": "About",
+    "live": "View live",
+    "project": "See this project"
+  },
+
+  "footer": {
+    "title": "Want to <span class=\"highlight\">work? </span>",
+    "text": "If you need a modern and powerful website for your business, startup or yourself, I am available for work. You can email me directly at"
+  }
 }

@@ -6,6 +6,7 @@ export type ProjectFrontmatter = {
   mockupAsset: string;
   previewAsset: string;
   editedAt: string;
+  mainTag: string;
   tags: string[];
 };
 

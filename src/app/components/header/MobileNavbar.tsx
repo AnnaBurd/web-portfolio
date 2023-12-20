@@ -5,6 +5,7 @@ import Link from "../ui/Link";
 import { LinkedinLogo } from "@phosphor-icons/react/dist/ssr/LinkedinLogo";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr/GithubLogo";
 import { Envelope } from "@phosphor-icons/react/dist/ssr/Envelope";
+import contacts from "../contacts/Contacts";
 
 type Props = {
   lang: Locale;
@@ -148,42 +149,18 @@ const MobileNavbar: React.FC<Props> = ({ lang, links }) => {
             </Link>
           </motion.li>
         ))}
-        <div
-          //   key="social"
-          //   variants={linkVariants}
-          className="m-4 flex items-center justify-end gap-2 self-end  pt-10"
-        >
-          <motion.a
-            key={"social-linkedin"}
-            variants={linkVariants}
-            href="#"
-            whileHover={{ color: "var(--color-btn-active)" }}
-            whileTap={{ scale: 0.95 }}
-            // className="transition-all duration-150 ease-in-out hover:text-[--color-btn-active]"
-          >
-            <LinkedinLogo size={26} weight="fill" />
-          </motion.a>
-          <motion.a
-            key={"social-git"}
-            variants={linkVariants}
-            href="#"
-            whileHover={{ color: "var(--color-btn-active)" }}
-            whileTap={{ scale: 0.95 }}
-            // className="transition-all duration-150 ease-in-out hover:text-[--color-btn-active]"
-          >
-            <GithubLogo size={26} weight="fill" />
-          </motion.a>
-
-          <motion.a
-            key={"social-mail"}
-            variants={linkVariants}
-            href="#"
-            whileHover={{ color: "var(--color-btn-active)" }}
-            whileTap={{ scale: 0.95 }}
-            // className="transition-all duration-150 ease-in-out hover:text-[--color-btn-active]"
-          >
-            <Envelope size={26} weight="fill" />
-          </motion.a>
+        <div className="m-4 flex items-center justify-end gap-2 self-end  pt-10">
+          {contacts.map((contact) => (
+            <motion.a
+              key={contact.key}
+              variants={linkVariants}
+              href={contact.href}
+              whileHover={{ color: "var(--color-btn-active)" }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {contact.icon}
+            </motion.a>
+          ))}
         </div>
       </motion.ul>
     </motion.div>

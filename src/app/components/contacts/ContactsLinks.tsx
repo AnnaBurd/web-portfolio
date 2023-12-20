@@ -1,31 +1,15 @@
-import { Envelope } from "@phosphor-icons/react/dist/ssr/Envelope";
-import { GithubLogo } from "@phosphor-icons/react/dist/ssr/GithubLogo";
-import { LinkedinLogo } from "@phosphor-icons/react/dist/ssr/LinkedinLogo";
+import contacts from "./Contacts";
 
 const ContactsLinks = () => {
-  return (
-    <>
-      <a
-        href="#"
-        className="transition-all duration-150 ease-in-out hover:text-[--color-btn-active]"
-      >
-        <LinkedinLogo size={26} weight="fill" />
-      </a>
-      <a
-        href="#"
-        className="transition-all duration-150 ease-in-out hover:text-[--color-btn-active]"
-      >
-        <GithubLogo size={26} weight="fill" />
-      </a>
-
-      <a
-        href="#"
-        className="transition-all duration-150 ease-in-out hover:text-[--color-btn-active]"
-      >
-        <Envelope size={26} weight="fill" />
-      </a>
-    </>
-  );
+  return contacts.map((contact) => (
+    <a
+      key={contact.key}
+      href={contact.href}
+      className="transition-all duration-150 ease-in-out hover:text-[--color-btn-active]"
+    >
+      {contact.icon}
+    </a>
+  ));
 };
 
 export default ContactsLinks;

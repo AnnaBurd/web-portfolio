@@ -1,6 +1,22 @@
 {
-  "title": "next-translate library",
   "en": "Tiếng Anh",
   "ru": "Tiếng Nga",
-  "vi": "Tiếng Việt"
+  "vi": "Tiếng Việt",
+
+  "nav": {
+    "work": "công việc",
+    "contacts": "liên lạc"
+  },
+
+  "btn": {
+    "work": "Xem công việc",
+    "about": "Giới thiệu",
+    "live": "Xem trực tiếp",
+    "project": "Đọc về dự án này"
+  },
+
+  "footer": {
+    "title": "Muốn <span class=\"highlight\">làm với em? </span>",
+    "text": "Em luôn mở cho các dự án mới và thú vị. Nếu bạn có một ý tưởng tuyệt vời, hãy liên hệ với tôi và chúng ta sẽ làm nó thành hiện thực!"
+  }
 }

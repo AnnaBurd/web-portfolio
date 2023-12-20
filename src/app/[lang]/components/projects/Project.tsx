@@ -10,18 +10,21 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import styles from "./Project.module.css";
 import { ProjectData } from "../../../Model";
 import { Locale } from "@/app/i18n/i18n-config";
+import { useTranslation } from "@/app/i18n/server";
 
 type Props = {
   data: ProjectData;
   lang: Locale;
 };
 
-const Project: React.FC<Props> = ({ data, lang }) => {
+const Project: React.FC<Props> = async ({ data, lang }) => {
+  const translation = (await useTranslation(lang, "common")).t;
+
   return (
     <article className="gap-x  grid py-10 md:grid-cols-2 ">
       <div className="pointer-events-none">
         <h4 className="mb-1 text-sm font-medium uppercase tracking-wide opacity-30">
-          Latest work
+          {data.mainTag}
         </h4>
         <h2
           className={
@@ -51,14 +54,14 @@ const Project: React.FC<Props> = ({ data, lang }) => {
             href={`${lang}/work/${data.slug}`}
             className="min-w-[7.5rem] !px-4 lg:min-w-[9rem]"
           >
-            About
+            {translation("btn.about")}
           </ButtonLink>
           <ButtonLink
             href={data.previewUrl}
             kind="secondary"
             className="min-w-[7.5rem] !px-4 lg:min-w-[9rem]"
           >
-            View live
+            {translation("btn.live")}
           </ButtonLink>
         </div>
       </div>
@@ -68,7 +71,7 @@ const Project: React.FC<Props> = ({ data, lang }) => {
           href={`${lang}/work/${data.slug}`}
           className={`${styles.preview} group relative block h-full max-h-[27rem] w-full  `}
         >
-          <span className=" @container block  h-full w-full transform-gpu transition-all duration-300 ease-in-out before:absolute before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
+          <span className=" block h-full  w-full transform-gpu transition-all duration-300 ease-in-out @container before:absolute before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
             <span className="@xs:width-[95%]   relative mx-auto block h-full ">
               <Image
                 src={data.mockupAsset}
@@ -88,7 +91,7 @@ const Project: React.FC<Props> = ({ data, lang }) => {
             className={`${styles.arrow} absolute bottom-0 right-0 flex  items-center gap-1.5 opacity-30 `}
           >
             <span className="text-xs font-medium tracking-wide md:text-sm ">
-              See this project
+              {translation("btn.project")}
             </span>
             <span className={styles["arrow-icon"]}>
               <ArrowRight size={20} weight="regular" />
