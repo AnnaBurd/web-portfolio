@@ -1,94 +1,75 @@
 ---
-title: "Geology Specialized AI Translator App"
-introduction: "Full website design and build for a concept team collaboration platform. This website also includes a beautiful blog. I have built the website and the blog in Webflow which has one of the best CMS for blog hosting."
+title: "VietLand - Real Estate App"
+introduction: "Modern web application designed and developed for a local real estate company. Built using performant static Astro components and strategically-placed React-ive islands, it ensures low costs through seamless integration with Contentful CMS and reliable hosting on Netlify."
 mainTag: latest work
 tags:
-  - Website Design
-  - Webflow develompent
-  - Concept
+  - Website Development
+  - React
+  - Astro
+  - Typescript
+  - Tailwind
 ---
 
-[logo]: https://raw.githubusercontent.com/AnnaBurd/translator-app-ts-front/492b9d9e7c1deacd02e615f8c5ffb2988676da7e/public/icon.svg "Logo Title Text 1"
+## Goals and Requirements
 
-> Empowered by advanced AI model APIs (Open AI / Azure), this application facilitates seamless translations of technical documentation based on context.
+The main objective of this project was to **help the local business establish a strong connection with potential customers** and create an outstanding first impression, ultimately giving the business a distinct advantage amidst the fiercely demanding marketplace.
 
-The translator app is an essential tool for businesses that require accurate translations of technical documentation. While popular text translation tools like Google Translate and commercial deep-learning-based solutions are effective for common `communication topics`, they often fall short when it comes to less commonly used languages or highly specialized terminology. 🤔➡️🚀
+Initial constraints that we needed to address:
 
----
+- user-friendly design with an understanding of local language and cultural distinctiveness
+- competitive performance on mobile devices
+- smooth delivery and uncomplicated content management processes
+- **restricted budget** 😹
 
-For instance, the bi-lingual international company the application was initially designed for requires all technical documents to be provided in both Russian **and Vietnamese languages**. Unfortunately, existing translation tools frequently produce unreadable gibberish due to the narrow-field terminology involved. This results in a significant amount of manual labor being required on what should otherwise be an automatable task.
+## Development Approach
 
-To address this issue, we have developed an AI-powered application designed specifically for enhancing the accuracy of translations by utilizing private databases with pre-existing samples from various fields and industries. By doing so, we can significantly improve efficiency while also reducing costs associated with manual corrections - ultimately providing better quality `service overall`!
+In this particular scenario, the approach taken was to **generate static pages** rather than rely on client-side or server-side rendering. The client-side rendering was ruled off due to the significance placed on mobile performance and search engine optimization (SEO). Meanwhile, the idea of spending on the development/hosting/management of the backend side ruled off the server-side rendering approach as well. Instead of overinvesting in the backend infrastructure, we choose the services of the headless CMS (with generous free tiers).
 
-[**View Live** _(\* might requre a few minutes to warm up server)_](https://translatorai.tech/ "Translator App")
+And, although static pages sound … _**lifeless**_, the app pages have been designed in a manner that does not give off a static impression entirely! The **secret is the usage of component-based islands of JS interactivity** whenever necessary.
 
-## Key Features
+## Technologies Used
 
-I should _say_ that ![alt text {150x150}][logo]
+[![Astro Badge](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=flat-square)](https://astro.build/)
+[![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square)](https://reactjs.org/)
+[![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat-square)](https://www.typescriptlang.org/)
+[![Contentful Badge](https://img.shields.io/badge/Contentful-2478CC?logo=contentful&logoColor=fff&style=flat-square)](https://www.contentful.com/)
+[![Figma Badge](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=fff&style=flat-square)](https://www.figma.com/)
+[![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat-square)](https://tailwindcss.com/)
+[![Leaflet Badge](https://img.shields.io/badge/Leaflet-199900?logo=leaflet&logoColor=fff&style=flat-square)](https://leafletjs.com/)
 
-dsfsdfsdfsdfsdf sdf sdf sdf
+| Technology   | Usage                                                                                                             |
+| ------------ | ----------------------------------------------------------------------------------------------------------------- |
+| **Astro**    | Leveraged for generating static pages, emphasizing fast load times and optimal performance.                       |
+| React        | Integrated strategically for dynamic content and interactive components, providing a lively user experience.      |
+| TypeScript   | Ensured codebase reliability and scalability, contributing to the overall maintainability of the application.     |
+| Contentful   | Served as the headless CMS, facilitating easy content updates and management.                                     |
+| Figma        | Utilized for collaborative design processes, ensuring a cohesive and visually appealing user interface.           |
+| Tailwind CSS | Applied for a streamlined and responsive design, enhancing the overall aesthetic and usability.                   |
+| Leaflet      | Integrated for interactive maps, enhancing the user experience and providing valuable location-based information. |
 
-- Private dataset of translation samples within a `vector database`
-- Versatile cloud and local file storage optionsc
-- Robust security ensured through JWT-based authentication and role-specific authorization
-  1. sdfdsf
-  2. sdfdsfsdf
-  3. dsfsdfsd
-- Comprehensive user profile system that allows to easily reset password, change email address and other personal information
-- Automated email notifications
-- Set up to run in any environment within docker container
+## Challenges and Solutions
 
-## Build with
+> Challenge 1: User-Friendly Design with Local Language and Cultural Distinctiveness
 
-![TypeScript {100x100}](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![NodeJS {100x100}](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js {100x100}](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![JWT {100x100}](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
-![MongoDB {100x100}](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![TensorFlow {100x100}](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
-![Azure {100x100}](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
-![Docker {100x100}](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Postman {100x100}](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Swagger {100x100}](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+Solution: Conducted extensive user research to understand local preferences and integrated culturally relevant elements into the design. Implemented a multilingual approach for broader accessibility.
 
-## Installation
+> Challenge 2: Competitive Performance on Mobile Devices
 
-Add `.env` file on place of the `.env.example` file in the root folder and fill in secret api/database tokens.
+Solution: Employed a mobile-first design strategy, optimizing every element for various screen sizes. Leveraged responsive design principles to ensure a seamless and engaging experience across devices.
 
-Linux & Windows:
+> Challenge 3: Smooth Delivery and Uncomplicated Content Management Processes
 
-```bash {3..4}
-npm install     # Install dependencies
-npm run dev     # Run in development mode
+Solution: Implemented a headless CMS, choosing Contentful for its user-friendly interface and easy content management. This decision streamlined content updates and maintenance without compromising on flexibility.
 
-npm run build   # Build production version
-npm start       # Run
-```
+> Challenge 4: Restricted Budget
 
-Docker:
+Solution: Prioritized cost-effective solutions such as utilizing the generous free tiers of the chosen technologies. This approach allowed us to create a high-quality product within budget constraints.
 
-```bash {3}
-# Build files
-npm run build
+## Key Takeaways 🍬
 
-# Build docker image
-docker build -t <any-image-name:tag> .
+Conclude with a summary of the project's impact, lessons learned, and potential future enhancements:
 
-# Push image to the docker hub
-docker tag <any-image-name:tag> <docker-username>/<any-image-name:tag>
-docker push <docker-username>/<any-image-name:tag>
-
-# Run docker container using image, locally or on hosting
-# When running container, make sure to expose port that is specified in the .env PORT variable, and to update api URL on the frontend side
-
-```
-
-This will run the backend (api) part of the application, the frontend (client) is [here](https://github.com/AnnaBurd/translator-app-ts-front)
-
-## Wrapping up
-
-This is my very-first tutorial on Next.js! 🍾
-
-I've been using Next.js to build a custom platform for my upcoming course, CSS for JavaScript Developers. It's a course specifically for JS developers who struggle with CSS. I know from experience that CSS becomes a lot more fun once you get comfortable with it, and being able to switch effortlessly between JS and CSS is absolutely wonderful. Follow the link to learn more!
-
-Special thanks to Brandon for the router-based solution! Brandon's working on Blitz.js, an exciting framework built on top of Next.js that aims to recreate the Rails experience, and I'm super excited to see where it goes 💯
+Impact: The project successfully established a strong online presence for the local real estate business, fostering meaningful connections with customers and overcoming budgetary constraints.
+Lessons Learned: Highlight any valuable insights gained during the development process, emphasizing the importance of user-centric design and cost-effective solutions.
+Future Enhancements: Provide a glimpse into potential future improvements, demonstrating a commitment to ongoing development and innovation.
+Feel free to incorporate these suggestions or tailor them to align with your specific experiences and project details!

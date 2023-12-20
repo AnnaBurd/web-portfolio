@@ -7,11 +7,11 @@
 
     h1, h2
         // font-family: var(--font-secondary)
-        @apply mt-20
+        @apply mt-12
 
     h2
         color: var(--color-btn-active)
-        @apply text-3xl font-bold mb-6
+        @apply text-xl font-bold mb-6
 
     // Paragraphs --------------------------
     p
@@ -28,7 +28,7 @@
     blockquote
         border-color: var(--color-btn-active)
         text-wrap: balance
-        @apply border-s-4 ps-3 italic font-semibold tracking-tight
+        @apply border-s-4 ps-3 italic tracking-tight text-sm
 
     // Images -------------------------------
     img
@@ -45,18 +45,21 @@
             height: 2em
 
     // Multiple images in a single paragraph 
-    p:has(img:not(:only-child)):not(:has(em,p,strong))
+    p:has(a:not(:only-child)):not(:has(em,p,strong))
         // background-color: blue
-        display: grid
-        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr))
+        display: flex
+        flex-wrap: wrap
+        // grid-template-columns: repeat(auto-fill, minmax(90px, 1fr))
         gap: 0.25rem
-        row-gap: 0rem
-        align-items: center
-        justify-items: center
+        // row-gap: 0rem
+        // align-items: center
+        // justify-items: center
         justify-content: center
         img
             margin: 0
             padding: 0
+            width: auto
+            height: 1.5rem
 
     // Separator line -----------------------
     hr
@@ -103,27 +106,37 @@
     // Tables -------------------------------
     // TODO: after used
     table
+        // background-color: pink
+        width: 100%
+        border: 1px solid black !important
         border-collapse: collapse
         border-spacing: 0
-        width: 100%
-        overflow: auto
+        // width: 100%
+        // overflow: auto
         margin: 1em 0
         font-size: 0.9em
         line-height: 1.6
         border-radius: 0.3em
         overflow: hidden
-        box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1)
+        // border: 2px solid red
+        // box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1)
         th
             font-weight: bold
+            background-color: var(--background-accent)
         th, td
             padding: 0.5em 1em
-            border: 1px solid var(--color-btn-active)
-            &:first-child
-                border-left: 0
-            &:last-child
-                border-right: 0
-            &:nth-child(odd)
-                background-color: var(--background-accent)
+
+        tr
+            border-bottom: 1px solid #dddddd
+
+        tr:nth-of-type(even)
+
+        tr:last-of-type
+            border-bottom: 1px solid var(--color-btn)
+            // background-color: #f3f3f3
+            // border: 1px solid var(--color-btn-active)
+            // &:nth-child(odd)
+                // background-color: var(--background-accent)
 
     // Footnotes ----------------------------
     // TODO: after used
