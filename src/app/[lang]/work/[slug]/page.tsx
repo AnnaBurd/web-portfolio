@@ -2,7 +2,7 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { fontSecondary } from "@/app/fonts";
 
 import Link from "@/app/components/ui/Link";
-import Markdown from "./Markdown";
+import Markdown from "./components/Markdown";
 
 import { Locale } from "@/app/i18n/i18n-config";
 import { getProjectData } from "@/scripts/getProjectsData";
