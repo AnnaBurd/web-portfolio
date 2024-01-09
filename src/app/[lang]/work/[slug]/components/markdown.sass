@@ -2,7 +2,7 @@
     width: 100%
 
     // Headings ----------------------------
-    h1, h2, h3
+    h1, h2
         text-align: center
 
     h1, h2
@@ -12,6 +12,10 @@
     h2
         color: var(--color-btn-active)
         @apply text-xl font-bold mb-6
+
+    h3
+        color: rgb(var(--text-rgb))
+        @apply text-base italic font-medium mb-2 opacity-60 pt-4
 
     // Paragraphs --------------------------
     p
@@ -35,25 +39,24 @@
         margin: 1rem auto
 
     // TODO: adjust if used, or remove
-    p:has(img:not(:only-child)):has(em,p,strong)
+    p:has(img:not(:only-child))
         // background-color: red
         display: inline-flex
         align-items: center
-        gap: 0.25rem
+        gap: 1rem
+        padding-top: 0.5rem
+        padding-bottom: 1rem
         img
-            width: 2em
-            height: 2em
+            min-width: 2em
+            min-height: 2em
+            margin: 0
 
     // Multiple images in a single paragraph 
     p:has(a:not(:only-child)):not(:has(em,p,strong))
-        // background-color: blue
+        // background-color: blue // TODO: comment out
         display: flex
         flex-wrap: wrap
-        // grid-template-columns: repeat(auto-fill, minmax(90px, 1fr))
         gap: 0.25rem
-        // row-gap: 0rem
-        // align-items: center
-        // justify-items: center
         justify-content: center
         img
             margin: 0
@@ -63,11 +66,12 @@
 
     // Separator line -----------------------
     hr
-        margin: 2em 4rem
+        margin: 2.5em 2rem
         border: 0
         height: 1px
         background: var(--color-btn-active)
         background-image: linear-gradient(to right, var(--background-accent), var(--color-btn-active), var(--background-accent))
+        opacity: 0.5
 
     // Lists --------------------------------
 

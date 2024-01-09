@@ -3,9 +3,13 @@ title: "Geology Specialized AI Translator App"
 introduction: "Full website design and build for a concept team collaboration platform. This website also includes a beautiful blog. I have built the website and the blog in Webflow which has one of the best CMS for blog hosting."
 mainTag: latest work
 tags:
-  - Website Design
-  - Webflow develompent
-  - Concept
+  - Web App
+  - React
+  - Node
+  - OpenAI
+  - Azure
+  - Typescript
+  - Tailwind
 ---
 
 [logo]: https://raw.githubusercontent.com/AnnaBurd/translator-app-ts-front/492b9d9e7c1deacd02e615f8c5ffb2988676da7e/public/icon.svg "Logo Title Text 1"
