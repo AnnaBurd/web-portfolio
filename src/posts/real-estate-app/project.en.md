@@ -29,6 +29,16 @@ And, although static pages sound … _**lifeless**_, the app pages have been des
 
 ## Technologies Used
 
+| Name                                              | Usage                                                                                                             |
+| :------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| [**Astro**](https://astro.build/)                 | Leveraged for generating static pages, emphasizing fast load times and optimal performance.                       |
+| [**React**](https://reactjs.org/)                 | Integrated strategically for dynamic content and interactive components, providing a lively user experience.      |
+| [**TypeScript**](https://www.typescriptlang.org/) | Ensured codebase reliability and scalability, contributing to the overall maintainability of the application.     |
+| [**Contentful**](https://www.contentful.com/)     | Served as the headless CMS, facilitating easy content updates and management.                                     |
+| [**Figma**](https://www.figma.com/)               | Utilized for collaborative design processes, ensuring a cohesive and visually appealing user interface.           |
+| [**Tailwind CSS**](https://tailwindcss.com/)      | Applied for a streamlined and responsive design, enhancing the overall aesthetic and usability.                   |
+| [**Leaflet**](https://leafletjs.com/)             | Integrated for interactive maps, enhancing the user experience and providing valuable location-based information. |
+
 [![Astro Badge](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=flat-square)](https://astro.build/)
 [![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square)](https://reactjs.org/)
 [![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat-square)](https://www.typescriptlang.org/)
@@ -36,16 +46,6 @@ And, although static pages sound … _**lifeless**_, the app pages have been des
 [![Figma Badge](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=fff&style=flat-square)](https://www.figma.com/)
 [![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat-square)](https://tailwindcss.com/)
 [![Leaflet Badge](https://img.shields.io/badge/Leaflet-199900?logo=leaflet&logoColor=fff&style=flat-square)](https://leafletjs.com/)
-
-| Technology       | Usage                                                                                                             |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **Astro**        | Leveraged for generating static pages, emphasizing fast load times and optimal performance.                       |
-| **React**        | Integrated strategically for dynamic content and interactive components, providing a lively user experience.      |
-| **TypeScript**   | Ensured codebase reliability and scalability, contributing to the overall maintainability of the application.     |
-| **Contentful**   | Served as the headless CMS, facilitating easy content updates and management.                                     |
-| **Figma**        | Utilized for collaborative design processes, ensuring a cohesive and visually appealing user interface.           |
-| **Tailwind CSS** | Applied for a streamlined and responsive design, enhancing the overall aesthetic and usability.                   |
-| **Leaflet**      | Integrated for interactive maps, enhancing the user experience and providing valuable location-based information. |
 
 ## Challenges and Solutions
 
