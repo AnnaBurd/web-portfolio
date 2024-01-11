@@ -2,145 +2,174 @@
     width: 100%
 
     // Headings ----------------------------
-    h1, h2
-        text-align: center
-
-    h1, h2
-        // font-family: var(--font-secondary)
-        @apply mt-12
-
     h2
-        color: var(--color-btn-active)
-        @apply text-xl font-bold mb-6
+        font-size: 1.25rem
+        font-weight: 500
+        letter-spacing: 0.025em
+        margin-bottom: 2rem
+        margin-top: 6rem
 
     h3
-        color: rgb(var(--text-rgb))
-        @apply text-base italic font-medium mb-2 opacity-60 pt-4
+        color: var(--color-btn-active)
+        font-size: 1.05rem
+        font-weight: 500
+        margin-bottom: 1rem
+        margin-top: 2.5rem
+
+    h4
+        color: red
+
+                // color: var(--color-btn-active)
+        // @apply text-base italic font-medium mb-2 opacity-60 pt-4
 
     // Paragraphs --------------------------
     p
-        @apply text-base leading-relaxed tracking-wide mb-3
-
-    // Links --------------------------------
-    a
-        color: var(--color-btn-active)
-        text-decoration: none
-        &:hover
-            text-decoration: underline
+        @apply text-base leading-7 tracking-wide mb-6
 
     // Blockquotes -------------------------
     blockquote
         border-color: var(--color-btn-active)
-        text-wrap: balance
-        @apply border-s-4 ps-3 italic tracking-tight text-sm
+        border-inline-start-width: 2px
+        padding-inline-start: 0.75rem
+        margin-top: 2.5rem
+        margin-bottom: 1.5rem
+        p
+            text-wrap: balance
+            letter-spacing: 0em
+            opacity: 0.9
+            font-style: italic
+
+    // Links --------------------------------
+    // Note: similar style as for links in src\app\components\ui\Link.module.css
+    a:not(:has(img))
+        text-decoration: none
+        padding: 0.08rem 0.1rem
+        transition: all 0.2s ease-out
+        font-weight: 500
+        text-tracking: -0.025em
+        box-shadow: inset 0px -0.5rem var(--color-link-highlight)
+        display: inline-block
+        height: 1.5em
+        transform: translateY(-0.031em) !important
+        &:hover
+            box-shadow: inset 0 -1.2rem var(--color-link-highlight)
 
     // Images -------------------------------
     img
-        margin: 1rem auto
+        // margin: 1rem auto
+        margin: 0 auto // center images in paragraphs
+        padding-bottom: 0.5rem
 
-    // TODO: adjust if used, or remove
+    // Multiple images in a single paragraph
     p:has(img:not(:only-child))
         // background-color: red
         display: inline-flex
         align-items: center
-        gap: 1rem
-        padding-top: 0.5rem
-        padding-bottom: 1rem
+        justify-content: space-between
+        gap: 0.5rem
+        padding-bottom: 0.5rem
         img
-            min-width: 2em
-            min-height: 2em
-            margin: 0
+            min-width: 10rem
+            min-height: 10rem
+            // margin: 0
 
-    // Multiple images in a single paragraph 
-    p:has(a:not(:only-child)):not(:has(em,p,strong))
-        // background-color: blue // TODO: comment out
-        display: flex
-        flex-wrap: wrap
-        gap: 0.25rem
-        justify-content: center
-        img
-            margin: 0
-            padding: 0
-            width: auto
-            height: 1.5rem
+    // Multiple images in a single paragraph, e.g. badges list
+    // p:has(a:not(:only-child)):not(:has(em,p,strong))
+    //     // background-color: blue // TODO: comment out
+    //     display: flex
+    //     flex-wrap: wrap
+    //     gap: 0.25rem
+    //     justify-content: center
+    //     img
+    //         margin: 0
+    //         padding: 0
+    //         width: auto
+    //         height: 1.5rem
 
     // Separator line -----------------------
     hr
-        margin: 2.5em 2rem
+        margin: 4rem 1.5rem 4.5rem 1.5rem
         border: 0
         height: 1px
-        background: var(--color-btn-active)
-        background-image: linear-gradient(to right, var(--background-accent), var(--color-btn-active), var(--background-accent))
-        opacity: 0.5
+        background: var(--color-btn)
+        background-image: linear-gradient(to right, var(--background-accent), var(--color-btn), var(--background-accent))
+        opacity: 0.3
 
     // Lists --------------------------------
 
     ol, ul
         li
-            // background-color: var(--background-accent)
-            margin-bottom: 0.75rem
+            margin-bottom: 1rem
 
+    // Multiple levels of lists
     ul ol, ol ul
-            margin-top: 0.75rem
-            margin-left: 2rem
+            // margin-top: 0.75rem
+            // margin-left: 2rem
 
     ol
         list-style: decimal
-        padding-left: 1rem
+        padding-left: 0.75rem
+        margin-left: 0.75rem
 
     ul:not(.contains-task-list)
-        // list-style: disc url('/vectors/list-item-disc.svg')
-        list-style: none
-        // padding-left: 1rem
+        list-style: disc
+        padding-left: 0.75rem
+        margin-left: 0.75rem
 
-        &>li::before
-            content: ""
-            display: inline-block
-            height: 0.65em
-            width: 0.65em
-            padding-right: 1em
-            background-image: url("/vectors/list-item-disc.svg")
-            background-repeat: no-repeat
-            background-size: contain
-            // background-position: left center
+        &>li::marker
+            color: var(--color-btn-active)
+            font-size: 0.95em
 
+    // Task list ----------------------------
     ul.contains-task-list
         background-color: pink
 
     // Tables -------------------------------
-    // TODO: after used
     table
-        // background-color: pink
+        // border-collapse: collapse
+        // border-spacing: 0
         width: 100%
-        border: 1px solid black !important
-        border-collapse: collapse
-        border-spacing: 0
-        // width: 100%
-        // overflow: auto
-        margin: 1em 0
         font-size: 0.9em
-        line-height: 1.6
-        border-radius: 0.3em
+        border-top-left-radius: 0.5rem
+        border-top-right-radius: 0.5rem
         overflow: hidden
-        // border: 2px solid red
-        // box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1)
+
+        // Table heading styles
         th
             font-weight: bold
             background-color: var(--background-accent)
+
         th, td
             padding: 0.5em 1em
+
+        // Draw table borders
+        td
+            border-right: 1px solid #dddddd,
+            border-left: 1px solid #dddddd
+
+        td:first-of-type
+            border-right: 1px solid var(--color-btn)
 
         tr
             border-bottom: 1px solid #dddddd
 
-        tr:nth-of-type(even)
-
         tr:last-of-type
             border-bottom: 1px solid var(--color-btn)
-            // background-color: #f3f3f3
-            // border: 1px solid var(--color-btn-active)
-            // &:nth-child(odd)
-                // background-color: var(--background-accent)
+
+        // Style table cells with image badges
+        td:has(img)
+            padding: 0em 1em
+            text-align: left !important
+            text-align: left
+            a
+                width: fit-content
+                height: 1.8em
+                display: flex
+                align-items: center
+            img
+                width: auto
+                height: 100%
+                border-radius: 0.1rem
 
     // Footnotes ----------------------------
     // TODO: after used
@@ -151,6 +180,7 @@
         font-size: medium
 
     // Code ---------------------------------
+    // TODO: after used
 
     // Inline code
     p code

@@ -16,10 +16,10 @@ The main objective of this project was to **help the local business establish a 
 
 Initial constraints that we needed to address:
 
-- user-friendly design with an understanding of local language and cultural distinctiveness
-- competitive performance on mobile devices
-- smooth delivery and uncomplicated content management processes
-- **restricted budget** 😹
+- User-friendly design with an understanding of local language and cultural distinctiveness
+- Competitive performance on mobile devices
+- Smooth delivery and uncomplicated content management processes
+- **Restricted budget** 😹
 
 ## Development Approach
 
@@ -27,27 +27,23 @@ In this particular scenario, the approach taken was to **generate static pages**
 
 And, although static pages sound … _**lifeless**_, the app pages have been designed in a manner that does not give off a static impression entirely! The **secret is the usage of component-based islands of JS interactivity** whenever necessary.
 
-## Technologies Used
+## List of Technologies
 
-| Name                                              | Usage                                                                                                             |
-| :------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| [**Astro**](https://astro.build/)                 | Leveraged for generating static pages, emphasizing fast load times and optimal performance.                       |
-| [**React**](https://reactjs.org/)                 | Integrated strategically for dynamic content and interactive components, providing a lively user experience.      |
-| [**TypeScript**](https://www.typescriptlang.org/) | Ensured codebase reliability and scalability, contributing to the overall maintainability of the application.     |
-| [**Contentful**](https://www.contentful.com/)     | Served as the headless CMS, facilitating easy content updates and management.                                     |
-| [**Figma**](https://www.figma.com/)               | Utilized for collaborative design processes, ensuring a cohesive and visually appealing user interface.           |
-| [**Tailwind CSS**](https://tailwindcss.com/)      | Applied for a streamlined and responsive design, enhancing the overall aesthetic and usability.                   |
-| [**Leaflet**](https://leafletjs.com/)             | Integrated for interactive maps, enhancing the user experience and providing valuable location-based information. |
+This project was developed by selecting a carefully curated set of modern technologies and tools. The pivotal ones are listed below. For a comprehensive view of all dependencies, including exact versions, feel free to explore the details in the [package.json](https://github.com/AnnaBurd/web-real-estate/blob/main/package.json) file.
 
-[![Astro Badge](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=flat-square)](https://astro.build/)
-[![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square)](https://reactjs.org/)
-[![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat-square)](https://www.typescriptlang.org/)
-[![Contentful Badge](https://img.shields.io/badge/Contentful-2478CC?logo=contentful&logoColor=fff&style=flat-square)](https://www.contentful.com/)
-[![Figma Badge](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=fff&style=flat-square)](https://www.figma.com/)
-[![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat-square)](https://tailwindcss.com/)
-[![Leaflet Badge](https://img.shields.io/badge/Leaflet-199900?logo=leaflet&logoColor=fff&style=flat-square)](https://leafletjs.com/)
+| Name                                                                                                                                                   | Usage                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| [![Astro Badge](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=flat-square)](https://astro.build/)                           | Leveraged for generating static pages, emphasizing fast load times and optimal performance.                       |
+| [![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square)](https://reactjs.org/)                           | Integrated strategically for dynamic content and interactive components, providing a lively user experience.      |
+| [![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat-square)](https://www.typescriptlang.org/) | Ensured codebase reliability and scalability, contributing to the overall maintainability of the application.     |
+| [![Contentful Badge](https://img.shields.io/badge/Contentful-2478CC?logo=contentful&logoColor=fff&style=flat-square)](https://www.contentful.com/)     | Served as the headless CMS, facilitating easy content updates and management.                                     |
+| [![Figma Badge](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=fff&style=flat-square)](https://www.figma.com/)                         | Utilized for collaborative design processes, ensuring a cohesive and visually appealing user interface.           |
+| [![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat-square)](https://tailwindcss.com/) | Applied for a streamlined and responsive design, enhancing the overall aesthetic and usability.                   |
+| [![Leaflet Badge](https://img.shields.io/badge/Leaflet-199900?logo=leaflet&logoColor=fff&style=flat-square)](https://leafletjs.com/)                   | Integrated for interactive maps, enhancing the user experience and providing valuable location-based information. |
 
 ## Challenges and Solutions
+
+The journey of bringing this project to life had a series of challenges. Embracing a [divide and conquer](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm) strategy, I systematically tackled each issue, meeting project requirements while adhering to budget and time constraints. In my perspective, more challenges bring more opportunities for innovation and improvement—each hurdle became a stepping stone towards overall growth and excellence.
 
 > Challenge 1: User-Friendly Design
 
@@ -71,9 +67,7 @@ The design became a keystone challenge of the project, it took the most time, wi
 - [second version _(responsive)_](https://ssg-web-responsive.netlify.app/)
 - [current version _(reworked design)_](https://deft-entremet-3bc804.netlify.app/)
 
-But **Figma**, a design tool, expedited the transformation of ideas into **live preview versions**. Its rapid prototyping capability played a crucial role in enhancing **the feedback loop with the client**, ensuring that the client remained well-informed about the progress of development and fostering a collaborative and informed decision-making process.
-
----
+**Figma**, a design tool, expedited the transformation of ideas into **live preview versions**. Its rapid prototyping capability played a crucial role in enhancing **the feedback loop with the client**, ensuring that the client remained well-informed about the progress of development and fostering a collaborative and informed decision-making process.
 
 > Challenge 2: Competitive Performance on Mobile Devices
 
@@ -85,15 +79,13 @@ To address this challenge, I employed a two-pronged approach. Firstly, I utilize
 
 In terms of design optimizations, it's essential to highlight **image optimizations**. Images were carefully tailored for different screen sizes, thanks to the **Contentful Image API**.
 
-The overall result, even without further optimizations, is a website that not only boasts an appealing appearance on various devices but also delivers optimal performance. This strategic approach successfully meets the high demand for mobile responsiveness in the local market.
-
 ![lighthouse performance score for mobile devices {300x100}](/images/work/real-estate-app/lighthouse-score.jpg "lighthouse performance score for mobile devices")
 
----
+The overall result, even without further optimizations, is a web application that has an appealing appearance on various devices but also delivers optimal performance. This strategic approach successfully meets the high demand for mobile responsiveness in the local market.
 
 > Challenge 3: Smooth Delivery and Uncomplicated Content Management Processes
 
-In my quest to understand how to ensure a smooth content delivery process and an uncomplicated content management experience, I explored popular site-building platforms like **WordPress**, **Joomla**, and **Shopify**. These platforms' widespread popularity is attributed, among other factors, to their **minimal technical requirements**. Users can effortlessly manage content by inputting data into relevant fields, pressing `submit` or `publish`, and promptly viewing the updated website.
+In my quest to understand how to ensure a smooth content delivery process and an uncomplicated content management experience, I explored popular site-building platforms like [WordPress](https://wordpress.org/), [Joomla](https://www.joomla.org/), and [Shopify](https://www.shopify.com/). These platforms' widespread popularity is attributed, among other factors, to their **minimal technical requirements**. Users can effortlessly manage content by inputting data into relevant fields, pressing `submit` or `publish`, and promptly viewing the updated website.
 
 This project aimed for a **similar content management experience without a heavy frontend**. Among the headless CMS options, **Contentful** emerged as the optimal choice, excelling in user experience and budget considerations. While initial configurations demanded at least a minimal understanding of database concepts and data types, subsequent data updates in content management mode became as straightforward as filling in web forms, including rich text.
 
@@ -101,13 +93,13 @@ This project aimed for a **similar content management experience without a heavy
 
 Assigned content managers can now effortlessly update site content and preview results almost immediately on the website, echoing the user-friendly nature of traditional CMS platforms.
 
----
-
 > Challenge 4: Restricted Budget
 
 The solution to the budget challenge involved leveraging the generous free tiers of the chosen technologies. This approach enabled the development and delivery of a high-quality product within minimal budget constraints while preserving significant potential for future scalability.
 
 ## Key Takeaways 🍬
+
+In retrospect, the project successfully enhanced the online presence of a local real estate business, securing new contracts and impressing potential clients. Valuable lessons include the importance of precise prioritization and active customer engagement. Looking ahead, addressing minor issues, and implementing tests stand as key priorities to ensure ongoing stability and reliability in the project's evolution.
 
 ### Results Achieved
 
