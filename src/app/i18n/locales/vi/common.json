@@ -4,19 +4,19 @@
   "vi": "Tiếng Việt",
 
   "nav": {
-    "work": "công việc",
-    "contacts": "liên lạc"
+    "work": "dự án của tôi",
+    "contacts": "liên hệ"
   },
 
   "btn": {
-    "work": "Xem công việc",
+    "work": "Xem dự án của tôi",
     "about": "Giới thiệu",
     "live": "Xem trực tiếp",
-    "project": "Đọc về dự án này"
+    "project": "Xem dự án này"
   },
 
   "footer": {
-    "title": "Muốn <span class=\"highlight\">làm với em? </span>",
-    "text": "Em luôn mở cho các dự án mới và thú vị. Nếu bạn có một ý tưởng tuyệt vời, hãy liên hệ với tôi và chúng ta sẽ làm nó thành hiện thực!"
+    "title": "Muốn <span class=\"highlight\">hợp tác?</span>",
+    "text": "Nếu bạn cần một trang web hiện đại và mạnh mẽ cho doanh nghiệp, khởi nghiệp hoặc bản thân, tôi sẵn sàng làm việc. Bạn có thể gửi email trực tiếp cho tôi tại"
   }
 }

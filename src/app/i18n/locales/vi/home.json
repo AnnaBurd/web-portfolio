@@ -1,16 +1,16 @@
 {
-  "h1": "Xin chào, em là Anna, <span class=\"highlight\">Web&nbsp;Developer</span> <br /> và chuyen giá <span class=\"highlight\">React</span>",
-  "intro": "Em là một lập trình viên web độc lập, tập trung vào việc tạo ra các trang web đẹp và chức năng cho các công ty trên toàn thế giới. Em sử dụng các công nghệ hiện đại như HTML5, CSS3, JavaScript, TypeScript, React, Next, Astro, Node, MongoDB và nhiều công nghệ khác.",
+  "h1": "Xin chào, tôi là Anna, <span class=\"highlight\">Nhà phát triển Web</span> <br /> và Chuyên gia <span class=\"highlight\">React</span>",
+  "intro": "Tôi thiết kế và xây dựng những ứng dụng web đẹp cho doanh nghiệp trên toàn thế giới. Nếu bạn đang tìm kiếm một chuyên gia chuyên nghiệp, có kỹ năng để cung cấp những giải pháp hiện đại và chức năng mà thực sự nổi bật, tôi là người bạn có thể tin cậy.",
 
   "about": {
-    "title": "Em <span class=\"highlight\">làm</span>",
+    "title": "Những gì <span class=\"highlight\">Tôi làm</span>",
     "p1": {
-      "title": "Web Development",
-      "text": "Em tạo ra các trang web đẹp và chức năng cho các công ty trên toàn thế giới. Em sử dụng các công nghệ hiện đại như HTML5, CSS3, JavaScript, TypeScript, React, Next, Astro, Node, MongoDB và nhiều công nghệ khác."
+      "title": "Phát triển Web",
+      "text": "Tôi tận tâm xây dựng những trang web vượt qua các tiêu chuẩn hiện đại. Tận dụng những công nghệ mới nhất và các phương pháp tốt nhất của ngành, tôi đảm bảo rằng trang web của bạn không chỉ là một hiện diện kỹ thuật số mà còn là một trải nghiệm nhanh chóng, an toàn và thân thiện với người dùng."
     },
     "p2": {
-      "title": "UX/UI design",
-      "text": "Em tạo ra các trang web đẹp và chức năng cho các công ty trên toàn thế giới. Em sử dụng các công nghệ hiện đại như HTML5, CSS3, JavaScript, TypeScript, React, Next, Astro, Node, MongoDB và nhiều công nghệ khác."
+      "title": "Ứng dụng Chiến lược Công nghệ",
+      "text": "Trong cách tiếp cận của tôi đối với phát triển web, tôi kết hợp kiến thức học thuật với kinh nghiệm thực tế để có ý thức áp dụng công nghệ từ một bộ kỹ năng đa dạng. Cho dù đó là tận dụng sức mạnh của Next.js cho ứng dụng động, thiết kế giao diện mượt mà với Tailwind CSS, khám phá Astro để tối ưu hóa hiệu suất, hoặc tích hợp Python cho các chức năng backend, tôi đảm bảo rằng dự án của bạn sẽ nhận được một giải pháp tùy chỉnh và hiệu quả."
     }
   }
 }

@@ -1,7 +1,8 @@
 {
-  "title": "project showcase",
+  "title": "Кейс проекта",
   "links": {
-    "github": "github repo",
-    "live": "visit live site"
-  }
+    "github": "репозиторий на GitHub",
+    "live": "посетить сайт"
+  },
+  "lastUpdate": "Последнее обновление"
 }

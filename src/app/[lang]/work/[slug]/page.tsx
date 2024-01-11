@@ -58,7 +58,7 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
           </div>
         </div>
 
-        <div className="mb-10 w-full overflow-hidden rounded-sm  opacity-[0.99] shadow-xl md:mx-auto md:mb-20 md:w-2/3">
+        <div className="mb-6 w-full overflow-hidden rounded-sm  opacity-[0.99] shadow-xl md:mx-auto md:mb-6 md:w-2/3">
           <video
             autoPlay
             loop
@@ -80,7 +80,7 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
           <Markdown>{projectData.content}</Markdown>
         </div>
         <div className=" mb-20 mt-10 w-full text-sm font-medium  italic opacity-70 md:mx-auto md:w-2/3 md:text-center md:text-base">
-          Last updated:{" "}
+          {translation("lastUpdate")}:{" "}
           <span className="font-bold">
             {new Date(projectData.frontmatterData.editedAt).toLocaleDateString(
               params.lang,
