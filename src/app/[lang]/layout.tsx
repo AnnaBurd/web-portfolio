@@ -17,6 +17,31 @@ export async function generateStaticParams() {
 // Dynamic segments with `params` [lang] not supported in `generateStaticParams` will not be dynamically generated at runtime
 export const dynamicParams = false;
 
+// Metadata for the page
+export async function generateMetadata({ params: { lang } }: Props) {
+  if (lang === "ru") {
+    return {
+      title: "Главная · Портфолио Анны",
+      description:
+        "Анна Бурданова - веб-разработчик, опытный в React.js, Next.js, TypeScript, JavaScript, HTML, CSS и многом другом.",
+    };
+  }
+
+  if (lang === "vi") {
+    return {
+      title: "Trang chủ · Hồ sơ của Anna",
+      description:
+        "Anna Burdanova là một nhà phát triển web có kinh nghiệm về React.js, Next.js, TypeScript, JavaScript, HTML, CSS và nhiều hơn nữa.",
+    };
+  }
+
+  return {
+    title: "Home · Anna's portfolio",
+    description:
+      "Anna Burdanova is a web developer experienced in React.js, Next.js, TypeScript, JavaScript, HTML, CSS, and more.",
+  };
+}
+
 type Props = {
   params: {
     lang: Locale;

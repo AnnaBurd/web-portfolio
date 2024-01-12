@@ -57,7 +57,11 @@ const Reveal: React.FC<Props> = ({ children, className, options }) => {
           visible: {
             opacity: 1,
             y: 0,
-            transition: { delay: 0.05, duration: 0.3 },
+            transition: {
+              delay: 0.05,
+              duration: 0.3,
+              easeFn: "cubic-bezier(0.17, 0.55, 0.55, 1)",
+            },
           },
         }}
         initial="initial"
