@@ -86,17 +86,31 @@ h2 {
 .highlight {
   position: relative;
   display: inline-block;
-  /* display: inline-block;
-  padding: 0.08rem 0.1rem;
-  transition: all 0.2s ease-out; */
 }
 
 .highlight::before {
   content: "";
   position: absolute;
+  z-index: -1;
+  will-change: inset;
   inset: 53% -6px 10% 4%;
   background: var(--color-link-highlight);
-  z-index: -1;
+}
+
+[data-highlight="false"] .highlight::before {
+  inset: 53% 100% 10% 4%;
+  transition: inset 0s;
+  background: red;
+}
+
+[data-highlight="true"] .highlight::before {
+  transition: inset 0.4s ease-in;
+  background: green;
+}
+
+[data-highlight="true"] .highlight:nth-of-type(2)::before {
+  transition: inset 0.4s 0.2s ease-in;
+  background: blue;
 }
 
 /* Style text selection */

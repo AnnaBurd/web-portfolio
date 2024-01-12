@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import { motion } from "framer-motion";
 
-import SmilingFace from "../SmilingFace";
+import SmilingFace from "../smiling-face/SmilingFace";
 import { useScrollbarWidth } from "../../hooks/useScrollbarWidth";
 import { useInitialScrollPosition } from "../../hooks/useInitialScrollPosition";
 import WelcomeText from "./WelcomeText";
 import ProgressBar from "./ProgressBar";
+import { Context } from "@/app/context/context-provider";
 
 // Animation variants in/out of the screen for the svg smile wrapper
 const positionVariants = {
@@ -39,10 +40,17 @@ export default function Animations({ play }: Props) {
     useState(false);
   const [hasStartedExitAnimation, setHasStartedExitAnimation] = useState(false);
 
+  const { updateLoadingProgressState } = useContext(Context);
+
   // Hide unplayable animations
   useEffect(() => {
-    if (!play) wrapperRef.current?.classList.add("hidden");
-  }, [play]);
+    if (!play) {
+      wrapperRef.current?.classList.add("hidden");
+
+      console.log("play - Hide unplayable animations");
+      updateLoadingProgressState("skipped");
+    }
+  }, [play, updateLoadingProgressState]);
 
   // Wait for initial animation to finish
   useEffect(() => {
@@ -80,9 +88,18 @@ export default function Animations({ play }: Props) {
       // Hide splash screen after all animations are done
       setTimeout(() => {
         wrapperRef.current?.classList.add("hidden");
+
+        // Update context
+        console.log("play - Update context on animation finish");
+        updateLoadingProgressState("finished");
       }, 2000);
     }
-  }, [play, hasStartedBlinkingFaceAnimation, loadingProgress]);
+  }, [
+    play,
+    hasStartedBlinkingFaceAnimation,
+    loadingProgress,
+    updateLoadingProgressState,
+  ]);
 
   const scrollbarWidth = useScrollbarWidth();
   const initialScrollPosition = useInitialScrollPosition();

@@ -1,5 +1,5 @@
 .contacts {
-  /* background: white; */
+  /* background: red; */
   background: rgb(var(--background-rgb));
 
   --padding-y: 18px;

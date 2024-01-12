@@ -1,11 +1,12 @@
 import "../globals.css";
 import Header from "../components/header/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/footer/Footer";
 import { fontPrimary } from "../fonts";
 
 import { Locale, locales } from "../i18n/i18n-config";
 import ContactsBar from "../components/contacts/ContactsBar";
 import SplashScreen from "../components/splash-screen/SplashScreen";
+import { ContextProvider } from "../context/context-provider";
 
 // Return a list of `params` to populate the [lang] dynamic segment
 export async function generateStaticParams() {
@@ -27,11 +28,13 @@ export default function Layout({ children, params: { lang } }: Props) {
   return (
     <html lang={lang}>
       <body className={fontPrimary.className}>
-        <SplashScreen />
-        <ContactsBar />
-        <Header lang={lang} />
-        {children}
-        <Footer lang={lang} />
+        <ContextProvider>
+          <SplashScreen />
+          <ContactsBar />
+          <Header lang={lang} />
+          {children}
+          <Footer lang={lang} />
+        </ContextProvider>
       </body>
     </html>
   );
