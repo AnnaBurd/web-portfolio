@@ -2,9 +2,13 @@
 
 import { createContext, useState } from "react";
 
+type LoadingState = "running" | "finished" | "skipped";
+
 export const Context = createContext({
-  loadingAnimationState: "running",
-  updateLoadingProgressState: (currentState: "finished" | "skipped") => {},
+  loadingAnimationState: "running" as LoadingState,
+  updateLoadingProgressState: (
+    currentState: Exclude<LoadingState, "running">,
+  ) => {},
 });
 
 export const ContextProvider = ({
@@ -12,11 +16,12 @@ export const ContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [loadingAnimationState, setLoadingAnimationState] = useState<
-    "running" | "finished" | "skipped"
-  >("running");
+  const [loadingAnimationState, setLoadingAnimationState] =
+    useState<LoadingState>("running");
 
-  const updateLoadingProgressState = (currentState: "finished" | "skipped") => {
+  const updateLoadingProgressState = (
+    currentState: Exclude<LoadingState, "running">,
+  ) => {
     setLoadingAnimationState(currentState);
   };
 
