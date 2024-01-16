@@ -83,16 +83,15 @@ export default function Animations({ play }: Props) {
 
       setTimeout(() => {
         setHasStartedExitAnimation(true);
-      }, 1000);
 
-      // Hide splash screen after all animations are done
-      setTimeout(() => {
-        wrapperRef.current?.classList.add("hidden");
+        // Hide splash screen after all animations are done
+        setTimeout(() => {
+          wrapperRef.current?.classList.add("hidden");
+        }, 400);
 
         // Update context
-        console.log("play - Update context on animation finish");
         updateLoadingProgressState("finished");
-      }, 2000);
+      }, 1000);
     }
   }, [
     play,

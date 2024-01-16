@@ -29,7 +29,7 @@ const About: React.FC<Props> = async ({ lang }) => {
           </h2>
         </Reveal>
         <div className="flex-1 pb-16 pt-6 md:pt-8">
-          <Reveal>
+          <Reveal options={{ animationDelay: 0.4 }}>
             <h3 className="mb-2 text-xl font-medium md:mb-4 md:text-3xl">
               {translation("about.p1.title")}
             </h3>
@@ -39,7 +39,7 @@ const About: React.FC<Props> = async ({ lang }) => {
             </p>
           </Reveal>
 
-          <Reveal>
+          <Reveal options={{ animationDelay: 0.4 }}>
             <h3 className="mb-2 mt-6 text-xl font-medium md:mb-4 md:mt-14 md:text-3xl">
               {translation("about.p2.title")}
             </h3>

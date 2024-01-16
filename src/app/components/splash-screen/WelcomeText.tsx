@@ -19,7 +19,7 @@ const firstQuarterOffset = (2 * Math.PI * 200 * 1) / 4;
 const offsetValTargets = {
   en: {
     intial: firstQuarterOffset - 46 - 170,
-    visible: firstQuarterOffset - 44,
+    visible: firstQuarterOffset - 39,
     out: firstQuarterOffset - 46 + 220,
   },
   vn: {

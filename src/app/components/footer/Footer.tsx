@@ -40,7 +40,7 @@ const Footer: React.FC<Props> = async ({ lang }) => {
               </span>
             </h2>
           </Reveal>
-          <Reveal className="flex-1 ">
+          <Reveal className="flex-1 " options={{ animationDelay: 0.4 }}>
             <p className="pt-8 text-[0.95rem] leading-relaxed [text-wrap:balance]  md:max-w-prose md:text-base md:tracking-wide ">
               {translation("footer.text")}
               <Link
@@ -52,9 +52,9 @@ const Footer: React.FC<Props> = async ({ lang }) => {
             </p>
           </Reveal>
         </div>
-        <Reveal className="text-xs opacity-40 md:text-sm">
+        <div className="text-xs opacity-40 md:text-sm">
           © Anna Burdanova, 2022 - {new Date().getFullYear()}
-        </Reveal>
+        </div>
       </div>
     </footer>
   );

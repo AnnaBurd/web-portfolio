@@ -7,12 +7,6 @@ type Props = {
   params: { lang: Locale };
 };
 
-// export async function generateMetadata({ params: { lang } }: Props) {
-//   return {
-//     title: "title of index page",
-//   };
-// }
-
 export default async function Home({ params: { lang } }: Props) {
   return (
     <main>

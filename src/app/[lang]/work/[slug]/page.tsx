@@ -29,7 +29,7 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
               {translation("title")}
             </h4>
           </Reveal>
-          <Reveal>
+          <Reveal options={{ animationDelay: 0.15 }}>
             <h2
               className={
                 fontSecondary.className +
@@ -39,13 +39,13 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
               {projectData.frontmatterData.title}
             </h2>
           </Reveal>
-          <Reveal>
+          <Reveal options={{ animationDelay: 0.3 }}>
             <p className=" my-auto max-w-prose text-base leading-7 opacity-80 [text-wrap:balance] md:text-lg md:leading-loose">
               {projectData.frontmatterData.introduction}
             </p>
           </Reveal>
 
-          <Reveal className="mt-6">
+          <Reveal className="mt-6" options={{ animationDelay: 0.5 }}>
             <Link
               href={projectData.frontmatterData.repositoryUrl}
               className="mr-6"
@@ -65,7 +65,11 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
           </Reveal>
         </div>
 
-        <Reveal className="mb-6 w-full overflow-hidden rounded-sm  opacity-[0.99] shadow-xl md:mx-auto md:mb-6 md:w-2/3">
+        <Reveal
+          className="mb-6 w-full overflow-hidden  rounded-sm opacity-[0.99]   md:mx-auto md:mb-6 md:w-2/3"
+          options={{ animationDelay: 0.8 }}
+          containerClassName="shadow-xl"
+        >
           <video
             autoPlay
             loop

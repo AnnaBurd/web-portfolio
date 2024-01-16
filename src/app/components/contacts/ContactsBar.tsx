@@ -4,13 +4,21 @@ import { useContext } from "react";
 import styles from "./ContactsBar.module.css";
 import ContactsLinks from "./ContactsLinks";
 import { Context } from "@/app/context/context-provider";
-import { motion } from "framer-motion";
+import { cubicBezier, motion } from "framer-motion";
 
 type Props = {};
 
 const barVariants = {
-  initial: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { delay: 0.7, duration: 0.4 } },
+  initial: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.4,
+      ease: cubicBezier(0.17, 0.55, 0.55, 1),
+    },
+  },
 };
 
 const ContactsBar: React.FC<Props> = ({}) => {

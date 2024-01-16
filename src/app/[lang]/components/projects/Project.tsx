@@ -46,7 +46,10 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
         </div>
       </Reveal>
 
-      <Reveal className="pointer-events-none">
+      <Reveal
+        className="pointer-events-none"
+        options={{ animationRootMargin: "0px" }}
+      >
         <p className=" text-[0.95rem] leading-relaxed [text-wrap:balance]  md:max-w-prose md:text-base md:tracking-wide ">
           {data.introduction}
         </p>
@@ -69,10 +72,11 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
 
       <Reveal
         className=" row-start-2 mb-11 h-full w-full md:col-start-2 md:row-start-1 md:row-end-3  md:mb-0 md:place-self-center "
-        options={{ verticalCenter: true }}
+        options={{ verticalCenter: true, animationDelay: 0.4 }}
       >
         <Link
           href={`${lang}/work/${data.slug}`}
+          scroll={true}
           className={`${styles.preview} group relative block  h-[clamp(20rem,100%,27rem)]  w-full  `}
         >
           <span className=" block h-full  w-full transform-gpu transition-all duration-300 ease-in-out @container before:absolute before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
