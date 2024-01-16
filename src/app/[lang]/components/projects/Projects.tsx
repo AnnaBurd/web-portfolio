@@ -8,11 +8,11 @@ const Projects: React.FC<Props> = ({ lang }) => {
   const projects = getProjectsData(lang);
 
   return (
-    <section className="wrapper" id="portfolio">
+    <section className="wrapper !mb-6 md:!mb-10" id="portfolio">
       {projects.map((project) => (
         <div
           key={project.slug}
-          className=" flex w-full items-center pb-20 md:min-h-screen"
+          className=" flex w-full items-center pb-6 md:min-h-[clamp(50vh,90vh,900px)] md:pb-0"
         >
           <Project data={project} lang={lang} />
         </div>

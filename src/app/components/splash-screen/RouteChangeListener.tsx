@@ -38,7 +38,7 @@ export function RouteChangeListener() {
   const pathname = usePathname();
 
   useEffect(() => {
-    console.log(`RouteChangeListener: route changed to: ${pathname}`);
+    // console.log(`RouteChangeListener: route changed to: ${pathname}`);
 
     // Store history of navigation in local session storage
     storePathValues(pathname);

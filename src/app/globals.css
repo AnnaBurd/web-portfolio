@@ -34,6 +34,11 @@
   }
 }
 
+/* html,
+body {
+  overflow-x: hidden;
+} */
+
 body {
   color: rgb(var(--text-rgb));
   background: rgb(var(--background-rgb));

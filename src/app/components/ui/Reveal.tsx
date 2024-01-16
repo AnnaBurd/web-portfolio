@@ -1,5 +1,6 @@
 "use client";
 
+import { useWindowSize } from "@/app/hooks/useWindowSize";
 import { cubicBezier, motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -30,11 +31,17 @@ const Reveal: React.FC<Props> = ({
 }) => {
   const { verticalCenter, revealHighlight } = { ...defaultOptions, ...options };
 
+  const windowSize = useWindowSize();
+
+  const isMobile = windowSize.width <= 768;
+
   const ref = useRef<HTMLDivElement>(null);
-  //   const isInView = useInView(ref);
+
   const isInView = useInView(ref, {
     once: true,
-    margin: options?.animationRootMargin || defaultOptions.animationRootMargin,
+    margin: isMobile
+      ? "0px"
+      : options?.animationRootMargin || defaultOptions.animationRootMargin,
   });
 
   const animationControls = useAnimation();
@@ -45,7 +52,9 @@ const Reveal: React.FC<Props> = ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: options?.animationDelay || defaultOptions.animationDelay,
+        delay: isMobile
+          ? 0
+          : options?.animationDelay || defaultOptions.animationDelay,
         duration: 0.8,
         ease: cubicBezier(0.17, 0.55, 0.55, 1),
       },

@@ -71,13 +71,18 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
       </Reveal>
 
       <Reveal
-        className=" row-start-2 mb-11 h-full w-full md:col-start-2 md:row-start-1 md:row-end-3  md:mb-0 md:place-self-center "
+        className=" row-start-2 h-full w-full pb-11 md:col-start-2 md:row-start-1 md:row-end-3  md:place-self-center md:pb-0 "
         options={{ verticalCenter: true, animationDelay: 0.4 }}
+        // options={{
+        //   verticalCenter: true,
+        //   animationDelay: 0,
+        //   animationRootMargin: "0px",
+        // }}
       >
         <Link
           href={`${lang}/work/${data.slug}`}
           scroll={true}
-          className={`${styles.preview} group relative block  h-[clamp(20rem,100%,27rem)]  w-full  `}
+          className={`${styles.preview} group relative block  h-[clamp(16rem,35vh,24rem)]  w-full md:h-[clamp(20rem,70vh,27rem)]  `}
         >
           <span className=" block h-full  w-full transform-gpu transition-all duration-300 ease-in-out @container before:absolute before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
             <span className="@xs:width-[95%]   relative mx-auto block h-full ">

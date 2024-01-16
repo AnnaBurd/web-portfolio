@@ -47,7 +47,7 @@ export default function Animations({ play }: Props) {
     if (!play) {
       wrapperRef.current?.classList.add("hidden");
 
-      console.log("play - Hide unplayable animations");
+      // console.log("play - Hide unplayable animations");
       updateLoadingProgressState("skipped");
     }
   }, [play, updateLoadingProgressState]);

@@ -23,7 +23,7 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
       <div className=" absolute inset-[--inset] z-0 bg-[--background-accent]"></div>
 
       <div className="wrapper z-10  ">
-        <div className=" mb-6 mt-44 flex flex-col items-center text-center md:mb-20 ">
+        <div className=" mb-[3vh] mt-[20vh] flex flex-col items-center text-center md:mb-20 ">
           <Reveal>
             <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest opacity-30">
               {translation("title")}
