@@ -21,7 +21,7 @@ export async function generateMetadata({ params: { lang, slug } }: Props) {
   if (slug === "real-estate-app") {
     if (lang === "en") {
       return {
-        title: "VietLand - Real Estate App · Портфолио Анны",
+        title: "VietLand - Real Estate App · Anna's portfolio",
         description:
           "Explore VietLand, a modern web application designed for a local real estate company. This project showcases the use of performant static Astro components and strategically-integrated React elements, ensuring optimal performance. Developed with a focus on user-friendly design, competitive mobile performance, and cost-effective solutions. Check out the latest work in website development, React, Astro, TypeScript, and Tailwind.",
       };
@@ -36,7 +36,7 @@ export async function generateMetadata({ params: { lang, slug } }: Props) {
     }
 
     return {
-      title: "VietLand - Real Estate App · Anna's portfolio",
+      title: "VietLand - Real Estate App · Портфолио Анны",
       description:
         "Исследуйте VietLand, современное веб-приложение, разработанное для местной компании по недвижимости. Этот проект демонстрирует использование производительных статических компонентов Astro и стратегически интегрированных элементов React, обеспечивая оптимальную производительность. Разработан с учетом дружелюбного дизайна, конкурентоспособной мобильной производительности и экономичных решений. Посмотрите последние работы в области разработки веб-сайтов, React, Astro, TypeScript и Tailwind.",
     };
