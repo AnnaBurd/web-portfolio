@@ -4,18 +4,14 @@
 
 /* Color variables */
 :root {
+  /* Color scheme option 0:  */
   --text-rgb: 0, 0, 0;
+
   --background-rgb: 255, 255, 255;
 
-  --background-accent-rgb: 186, 212, 206;
-  /* --background-accent: rgba(var(--background-accent-rgb), 0.4); */
-  /* --background-accent: red; */
   --background-accent: #e3eeeb;
 
-  --color-blue-rgb: 38, 78, 112;
-  --color-pink-rgb: 249, 180, 171;
-  --color-yellow-rgb: 253, 235, 211;
-  --color-green-rgb: 103, 145, 134;
+  --color-link-highlight: #ffe872;
 
   --color-btn: #a5c0b8;
   --color-btn-active: #87aba0;
@@ -23,13 +19,55 @@
   --color-btn--secondary: #fdebd3;
   --color-btn--secondary-active: #fad29e;
 
-  --color-link-highlight: #ffe872;
+  /* Color scheme option 3:  */
+  /* --text-rgb: 16, 37, 66;
+
+  --background-rgb: 255, 255, 255;
+
+  --background-accent: #ede9ed;
+
+  --color-link-highlight: #fff061;
+
+  --color-btn: #c8bcc8;
+  --color-btn-active: #b6a5b6;
+
+  --color-btn--secondary: #99cdd6;
+  --color-btn--secondary-active: #7cbfcb; */
+
+  /* Color scheme option 6:  */
+  --text-rgb: 35, 31, 32;
+
+  --background-rgb: 255, 255, 255;
+
+  --background-accent: #e3f2fb;
+
+  --color-link-highlight: #ffea82;
+
+  --color-btn: #acd8f2;
+  --color-btn-active: #91cbed;
+
+  --color-btn--secondary: #fff2b4;
+  --color-btn--secondary-active: #ffee9b;
+
+  /* Color scheme option 7:  */
+  /* --text-rgb: 0, 0, 0;
+
+  --background-rgb: 255, 255, 255;
+
+  --background-accent: #f4f2d4;
+
+  --color-link-highlight: #efdc66;
+
+  --color-btn: #b9dbc9;
+  --color-btn-active: #a7c5b5;
+
+  --color-btn--secondary: #f4f2d4;
+  --color-btn--secondary-active: #dcdabf; */
 }
 
-/* Dark mode */
+/* Dark mode: TODO:*/
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 0, 0, 0;
     --background-rgb: 255, 255, 255;
   }
 }
