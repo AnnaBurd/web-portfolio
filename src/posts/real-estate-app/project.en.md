@@ -1,7 +1,7 @@
 ---
 title: "VietLand - Real Estate App"
 introduction: "Modern web application designed and developed for a local real estate company. Built using performant static Astro components and strategically-placed React-ive islands, it ensures low costs through seamless integration with Contentful CMS and reliable hosting on Netlify."
-mainTag: latest work
+mainTag: featured work
 tags:
   - Website Development
   - React
@@ -103,12 +103,18 @@ In retrospect, the project successfully enhanced the online presence of a local 
 
 ### Results Achieved
 
-The project **has successfully established a strong online presence for the local real estate business**, generating meaningful connections with customers and overcoming budgetary constraints. While development work continues to address emerging requirements, the project has already yielded significant business results. At least five potential clients have expressed being 'impressed with the professional website looks' and are actively considering collaboration. Furthermore, **a new contract has been concluded 🥂, with the website playing a key role in the initial representation of a land lot**. Overall, I am rather happy with the achieved goals.
+The project **has successfully established a strong online presence for the local real estate business**, generating meaningful connections with customers and overcoming budgetary constraints.
+
+While development work continues to address emerging requirements, the project has already yielded significant business results. At least five potential clients have expressed being _'impressed with the professional website looks'_ and are actively considering collaboration. Furthermore, **a new contract has been concluded 🥂, with the website playing a key role in the initial representation of a land lot**. Overall, I am rather happy with the achieved results.
 
 ### Lessons Learned
 
-As a developer of this project, I gained valuable insights, the prominent one being the **importance of accurately defining priorities and of active engagement in a feedback loop with customers**. Certain features, which required considerable time and effort for implementation, ultimately became a waste of time, leading to the removal of entire page sections deemed 'irrelevant to the business.' Simultaneously, unforeseen business requirements necessitated additional reworks. With a better planning strategy, there's a potential for a significant 20% reduction in development time. This experience underscored the **dynamic nature of project requirements** and highlighted the significance of effective communication and adaptable planning in achieving optimal outcomes.
+As a developer of this project, I gained valuable insights, the prominent one being the **importance of accurately defining priorities and of active engagement in a feedback loop with customers**. Certain features, which required considerable time and effort for implementation, ultimately became a waste of time, leading to the removal of entire page sections deemed _'irrelevant to the business.'_ Simultaneously, unforeseen business requirements necessitated additional reworks. With a better planning strategy, there's a potential for a significant 20% reduction in development time.
+
+This experience underscored the **dynamic nature of project requirements** and highlighted the significance of effective communication and adaptable planning in achieving optimal outcomes.
 
 ### Future Plans
 
-The work on the project is ongoing, with a primary focus on addressing minor issues, such as mobile image sliders or accessibility. One feature that I intentionally skipped as a solo developer was the tests. However, in retrospect, I now realize that **as the project evolves, even minimal changes can potentially impact already implemented features**. Without any safeguards on the PR merge, I find myself having to perform manual checks on each update or waiting for bug reports 🫣. Consequently, **implementing tests has become the next significant feature on the horizon to enhance the project's stability and maintain a reliable development process**.
+The work on the project is ongoing, with a primary focus on addressing minor issues, such as mobile image sliders or accessibility.
+
+One feature that I intentionally skipped as a solo developer was the tests. However, in retrospect, I now realize that **as the project evolves, even minimal changes can potentially impact already implemented features**. Without any safeguards on the PR merge, I find myself having to perform manual checks on each update or waiting for bug reports 🫣. Consequently, **implementing tests has become the next significant feature on the horizon to enhance the project's stability and maintain a reliable development process**.

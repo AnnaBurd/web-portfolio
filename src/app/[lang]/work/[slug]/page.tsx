@@ -7,6 +7,7 @@ import Markdown from "./components/Markdown";
 import { Locale } from "@/app/i18n/i18n-config";
 import { getProjectData } from "@/scripts/getProjectsData";
 import { useTranslation } from "@/app/i18n/server";
+import Reveal from "@/app/components/ui/Reveal";
 
 type Props = {
   params: { slug: string; lang: Locale };
@@ -22,23 +23,29 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
       <div className=" absolute inset-[--inset] z-0 bg-[--background-accent]"></div>
 
       <div className="wrapper z-10  ">
-        <div className=" mb-6 mt-44 flex flex-col items-center text-center md:mb-20 ">
-          <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest opacity-30">
-            {translation("title")}
-          </h4>
-          <h2
-            className={
-              fontSecondary.className +
-              ` mb-6 max-w-[22ch] font-black leading-tight [text-wrap:balance]`
-            }
-          >
-            {projectData.frontmatterData.title}
-          </h2>
-          <p className=" my-auto max-w-prose text-base leading-7 opacity-80 [text-wrap:balance] md:text-lg md:leading-loose">
-            {projectData.frontmatterData.introduction}
-          </p>
+        <div className=" mb-[3vh] mt-[20vh] flex flex-col items-center text-center md:mb-20 ">
+          <Reveal>
+            <h4 className="mb-1 text-sm font-semibold uppercase tracking-widest opacity-30">
+              {translation("title")}
+            </h4>
+          </Reveal>
+          <Reveal options={{ animationDelay: 0.15 }}>
+            <h2
+              className={
+                fontSecondary.className +
+                ` mb-6 max-w-[22ch] font-black leading-tight [text-wrap:balance]`
+              }
+            >
+              {projectData.frontmatterData.title}
+            </h2>
+          </Reveal>
+          <Reveal options={{ animationDelay: 0.3 }}>
+            <p className=" my-auto max-w-prose text-base leading-7 opacity-80 [text-wrap:balance] md:text-lg md:leading-loose">
+              {projectData.frontmatterData.introduction}
+            </p>
+          </Reveal>
 
-          <div className="mt-6">
+          <Reveal className="mt-6" options={{ animationDelay: 0.5 }}>
             <Link
               href={projectData.frontmatterData.repositoryUrl}
               className="mr-6"
@@ -55,10 +62,14 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
                 <ArrowRight size={16} weight="regular" />
               </span>
             </Link>
-          </div>
+          </Reveal>
         </div>
 
-        <div className="mb-6 w-full overflow-hidden rounded-sm  opacity-[0.99] shadow-xl md:mx-auto md:mb-6 md:w-2/3">
+        <Reveal
+          className="mb-6 w-full overflow-hidden  rounded-sm opacity-[0.99]   md:mx-auto md:mb-6 md:w-2/3"
+          options={{ animationDelay: 0.8 }}
+          containerClassName="shadow-xl"
+        >
           <video
             autoPlay
             loop
@@ -74,7 +85,7 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
               type="video/mp4"
             />
           </video>
-        </div>
+        </Reveal>
 
         <div className="w-full overflow-x-hidden md:mx-auto md:w-2/3">
           <Markdown>{projectData.content}</Markdown>

@@ -11,6 +11,7 @@ import styles from "./Project.module.css";
 import { ProjectData } from "../../../Model";
 import { Locale } from "@/app/i18n/i18n-config";
 import { useTranslation } from "@/app/i18n/server";
+import Reveal from "@/app/components/ui/Reveal";
 
 type Props = {
   data: ProjectData;
@@ -22,7 +23,7 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
 
   return (
     <article className="gap-x  grid py-10 md:grid-cols-2 ">
-      <div className="pointer-events-none">
+      <Reveal className="pointer-events-none ">
         <h4 className="mb-1 text-sm font-medium uppercase tracking-wide opacity-30">
           {data.mainTag}
         </h4>
@@ -43,9 +44,12 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
 
-      <div className="pointer-events-none">
+      <Reveal
+        className="pointer-events-none"
+        options={{ animationRootMargin: "0px" }}
+      >
         <p className=" text-[0.95rem] leading-relaxed [text-wrap:balance]  md:max-w-prose md:text-base md:tracking-wide ">
           {data.introduction}
         </p>
@@ -64,12 +68,21 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
             {translation("btn.live")}
           </ButtonLink>
         </div>
-      </div>
+      </Reveal>
 
-      <div className=" row-start-2 mb-11 flex h-[clamp(20rem,35vh,28rem)] items-center md:col-start-2  md:row-start-1 md:row-end-3 md:mb-0 md:h-full md:w-full md:place-self-center">
+      <Reveal
+        className=" row-start-2 h-full w-full pb-11 md:col-start-2 md:row-start-1 md:row-end-3  md:place-self-center md:pb-0 "
+        options={{ verticalCenter: true, animationDelay: 0.4 }}
+        // options={{
+        //   verticalCenter: true,
+        //   animationDelay: 0,
+        //   animationRootMargin: "0px",
+        // }}
+      >
         <Link
           href={`${lang}/work/${data.slug}`}
-          className={`${styles.preview} group relative block h-full max-h-[27rem] w-full  `}
+          scroll={true}
+          className={`${styles.preview} group relative block  h-[clamp(16rem,35vh,24rem)]  w-full md:h-[clamp(20rem,70vh,27rem)]  `}
         >
           <span className=" block h-full  w-full transform-gpu transition-all duration-300 ease-in-out @container before:absolute before:inset-0 before:-z-10 before:bg-[--background-accent] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:duration-200 group-hover:ease-linear">
             <span className="@xs:width-[95%]   relative mx-auto block h-full ">
@@ -98,7 +111,7 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
             </span>
           </div>
         </Link>
-      </div>
+      </Reveal>
     </article>
   );
 };
