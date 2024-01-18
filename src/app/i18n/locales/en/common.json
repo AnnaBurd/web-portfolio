@@ -12,11 +12,11 @@
     "work": "See my work",
     "about": "About",
     "live": "View live",
-    "project": "See this project"
+    "project": "More about project"
   },
 
   "footer": {
     "title": "Want to <span class=\"highlight\">work? </span>",
-    "text": "If you need a modern and powerful website for your business, startup, or yourself, I am available for work. You can email me directly at"
+    "text": "If you have an interesting project you'd like to discuss, or just want to say hello, I would be happy to hear from you! You can email me directly at"
   }
 }

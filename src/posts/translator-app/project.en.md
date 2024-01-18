@@ -1,7 +1,7 @@
 ---
 title: "Geology Specialized AI Translator App"
 introduction: "Web application employed to translate technical documentation in petroleum geology, context-aware. Seamlessly integrates OpenAI/Azure and local AI models into an advanced AI chain to produce precise translations while ensuring company data security. User-friendly interface and support for formatted Docx files simplify the translation process for non-technical users."
-mainTag: latest work
+mainTag: featured work
 tags:
   - Web App
   - React
