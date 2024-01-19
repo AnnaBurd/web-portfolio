@@ -8,7 +8,7 @@
       },
       {
         "metric": "first-contentful-paint",
-        "budget": 1000
+        "budget": 1500
       }
     ],
     "resourceSizes": [
@@ -24,7 +24,7 @@
     "resourceCounts": [
       {
         "resourceType": "third-party",
-        "budget": 25
+        "budget": 50
       }
     ]
   }

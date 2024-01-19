@@ -2,9 +2,6 @@ import { Locale } from "@/app/i18n/i18n-config";
 import { motion, useCycle } from "framer-motion";
 import { useRef } from "react";
 import Link from "../ui/Link";
-import { LinkedinLogo } from "@phosphor-icons/react/dist/ssr/LinkedinLogo";
-import { GithubLogo } from "@phosphor-icons/react/dist/ssr/GithubLogo";
-import { Envelope } from "@phosphor-icons/react/dist/ssr/Envelope";
 import contacts from "../contacts/Contacts";
 
 type Props = {

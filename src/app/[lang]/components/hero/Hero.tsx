@@ -69,6 +69,10 @@ const Hero: React.FC<Props> = ({ lang }) => {
         headingRef.current?.setAttribute("data-highlight", "true");
       }, 1600);
     }
+
+    if (loadingAnimationState === "skipped") {
+      headingRef.current?.setAttribute("data-highlight", "true");
+    }
   }, [loadingAnimationState]);
 
   return (

@@ -21,7 +21,8 @@ const Footer: React.FC<Props> = async ({ lang }) => {
           <Reveal className="flex-1" options={{ revealHighlight: true }}>
             <h2
               className={
-                fontSecondary.className + `  mb-4 font-black leading-tight`
+                fontSecondary.className +
+                `  mb-4  font-black leading-tight max-[500px]:w-4/5`
               }
             >
               <span
