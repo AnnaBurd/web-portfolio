@@ -7,6 +7,7 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   replace?: boolean;
+  prefetch?: boolean;
   scroll?: boolean;
 };
 
@@ -15,6 +16,7 @@ const Button: React.FC<Props> = ({
   href,
   className,
   replace = false,
+  prefetch = false,
   scroll = true,
 }) => {
   return (
@@ -23,6 +25,7 @@ const Button: React.FC<Props> = ({
       href={href}
       replace={replace}
       scroll={scroll}
+      prefetch={prefetch}
     >
       {children}
     </Link>

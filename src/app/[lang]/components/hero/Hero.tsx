@@ -60,6 +60,7 @@ const Hero: React.FC<Props> = ({ lang }) => {
   // Show the highlight animation only when the page has loaded
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
+    console.log("hero-> loadingAnimationState", loadingAnimationState);
     if (loadingAnimationState === "running") {
       headingRef.current?.setAttribute("data-highlight", "false");
     }
@@ -68,6 +69,10 @@ const Hero: React.FC<Props> = ({ lang }) => {
       setTimeout(() => {
         headingRef.current?.setAttribute("data-highlight", "true");
       }, 1600);
+    }
+
+    if (loadingAnimationState === "skipped") {
+      headingRef.current?.setAttribute("data-highlight", "true");
     }
   }, [loadingAnimationState]);
 
