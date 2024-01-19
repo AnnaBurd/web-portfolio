@@ -19,6 +19,12 @@ const Button: React.FC<Props> = ({
   prefetch = false,
   scroll = true,
 }) => {
+
+  // In case link is a simple anchor link, we don't want to use next/link (it is not working in production mode on netlify deployment)
+
+  if(href.startsWith("#")) return (<a href={href} className={`${styles["link-highlight"]} text-base font-medium ${className}`}>{children}</a>);
+
+
   return (
     <Link
       className={`${styles["link-highlight"]}  text-base font-medium ${className}`}
