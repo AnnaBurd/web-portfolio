@@ -37,7 +37,7 @@ jobs:
         id: wait_for_netlify
         uses: jakepartusch/wait-for-netlify-action@v1.4
         with:
-          site_name: roaring-douhua-959988
+          site_name: annaburd
           max_timeout: 180
 
       - name: Audit URLs using Lighthouse
@@ -46,9 +46,9 @@ jobs:
         with:
           urls: |
             ${{ steps.wait_for_netlify.outputs.url }}
-            ${{ steps.wait_for_netlify.outputs.url }}en
-            ${{ steps.wait_for_netlify.outputs.url }}vi
-            ${{ steps.wait_for_netlify.outputs.url }}ru
+            ${{ steps.wait_for_netlify.outputs.url }}en/work/real-estate-app
+            ${{ steps.wait_for_netlify.outputs.url }}ru/work/translator-app
+
           budgetPath: ".github/lighthouse/budget.json" # test performance budgets https://web.dev/articles/use-lighthouse-for-performance-budgets
           uploadArtifacts: true # save results as an action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
