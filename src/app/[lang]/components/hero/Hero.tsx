@@ -7,6 +7,9 @@ import { useTranslation } from "@/app/i18n/client";
 import { cubicBezier, motion } from "framer-motion";
 import { useContext, useEffect, useRef } from "react";
 import { Context } from "@/app/context/context-provider";
+import Canvas from "../animated-scene/Canvas";
+import AnimatedScene from "../animated-scene/AnimatedScene";
+import AnimatedSceneOnCanvas from "../animated-scene/AnimatedSceneOnCanvas";
 
 type Props = {
   lang: Locale;
@@ -78,7 +81,10 @@ const Hero: React.FC<Props> = ({ lang }) => {
   return (
     <section className="relative flex min-h-[100svh] w-full">
       <div className=" absolute inset-[--inset] z-0 bg-[--background-accent]"></div>
-      <div className="wrapper  z-10 flex w-full items-center justify-stretch ">
+
+      <AnimatedSceneOnCanvas />
+
+      <div className="wrapper z-10 flex w-full items-center justify-stretch ">
         <motion.div
           className="4xl:pb-60 4xl:pt-40 mb-10 mt-16 will-change-transform"
           animate={loadingAnimationState !== "running" ? "visible" : "initial"}

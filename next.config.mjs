@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  webpack: (config, { isServer }) => {
+    config.module.rules.push({
+      test: /\.glsl$/,
+      use: "raw-loader",
+      exclude: /node_modules/,
+    });
+
+    return config;
+  },
+
   // Note: i18n configs are not working with new App Directory Structure, used middleware to navigate to locales instead
   // i18n: {
   //   locales: ["en", "vn", "vi"],
@@ -17,4 +27,4 @@ const nextConfig = {
   // },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

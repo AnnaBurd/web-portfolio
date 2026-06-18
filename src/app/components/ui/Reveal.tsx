@@ -62,8 +62,6 @@ const Reveal: React.FC<Props> = ({
   };
 
   useEffect(() => {
-    // console.log("isInView", isInView, ref.current);
-
     if (isInView) {
       animationControls.start("visible");
 
