@@ -1,5 +1,5 @@
 ---
-title: "VietLand - Real Estate App"
+title: "VietLand Real Estate App"
 introduction: "Modern web application designed and developed for a local real estate company. Built using performant static Astro components and strategically-placed React-ive islands, it ensures low costs through seamless integration with Contentful CMS and reliable hosting on Netlify."
 mainTag: featured work
 tags:

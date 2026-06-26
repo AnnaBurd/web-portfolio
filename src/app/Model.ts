@@ -2,6 +2,7 @@ export type ProjectFrontmatter = {
   title: string;
   introduction: string;
   previewUrl: string;
+  currentVersionUrl?: string;
   repositoryUrl: string;
   mockupAsset: string;
   previewAsset: string;

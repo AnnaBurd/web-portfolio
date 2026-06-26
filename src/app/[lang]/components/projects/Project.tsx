@@ -53,7 +53,7 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
         <p className=" text-[0.95rem] leading-relaxed [text-wrap:balance]  md:max-w-prose md:text-base md:tracking-wide ">
           {data.introduction}
         </p>
-        <div className="pointer-events-auto mt-6 flex gap-4 md:mt-8 ">
+        <div className="pointer-events-auto mt-6 flex flex-wrap items-center gap-4 md:mt-8 ">
           <ButtonLink
             href={`${lang}/work/${data.slug}`}
             className="min-w-[7.5rem] !px-4 lg:min-w-[9rem]"
@@ -63,10 +63,25 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
           <ButtonLink
             href={data.previewUrl}
             kind="secondary"
-            className="min-w-[7.5rem] !px-4 lg:min-w-[9rem]"
+            className={
+              data.currentVersionUrl
+                ? "!px-4"
+                : "min-w-[7.5rem] !px-4 lg:min-w-[9rem]"
+            }
           >
-            {translation("btn.live")}
+            {data.currentVersionUrl
+              ? translation("btn.v1")
+              : translation("btn.live")}
           </ButtonLink>
+          {data.currentVersionUrl && (
+            <ButtonLink
+              href={data.currentVersionUrl}
+              kind="secondary"
+              className="!px-4"
+            >
+              {translation("btn.current")}
+            </ButtonLink>
+          )}
         </div>
       </Reveal>
 

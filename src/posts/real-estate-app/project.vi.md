@@ -1,5 +1,5 @@
 ---
-title: "VietLand - Ứng dụng Bất động sản"
+title: "VietLand Ứng dụng Bất động sản"
 introduction: "Ứng dụng web hiện đại được thiết kế và phát triển cho một công ty bất động sản địa phương. Xây dựng bằng cách sử dụng các thành phần Astro tĩnh hiệu suất cao và các đảo React chiến lược, đảm bảo chi phí thấp thông qua tích hợp mượt mà với Contentful CMS và việc lưu trữ đáng tin cậy trên Netlify."
 mainTag: "Dự án mới nhất"
 tags:
