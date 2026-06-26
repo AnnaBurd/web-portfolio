@@ -6,7 +6,7 @@ import Markdown from "./components/Markdown";
 
 import { Locale } from "@/app/i18n/i18n-config";
 import { getProjectData } from "@/scripts/getProjectsData";
-import { useTranslation } from "@/app/i18n/server";
+import { getTranslation } from "@/app/i18n/server";
 import Reveal from "@/app/components/ui/Reveal";
 
 type Props = {
@@ -16,7 +16,7 @@ type Props = {
 const ProjectPage: React.FC<Props> = async ({ params }) => {
   const projectData = getProjectData(params.slug, params.lang);
 
-  const translation = (await useTranslation(params.lang, "project")).t;
+  const translation = (await getTranslation(params.lang, "project")).t;
 
   return (
     <article className=" flex min-h-screen w-full overflow-x-hidden">

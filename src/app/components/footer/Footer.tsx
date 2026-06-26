@@ -1,6 +1,6 @@
 import { fontSecondary } from "../../fonts";
 import { Locale } from "../../i18n/i18n-config";
-import { useTranslation } from "../../i18n/server";
+import { getTranslation } from "../../i18n/server";
 import SmilingFace from "../smiling-face/SmilingFace";
 import { email } from "../contacts/Contacts";
 import Link from "../ui/Link";
@@ -11,7 +11,7 @@ type Props = {
 };
 
 const Footer: React.FC<Props> = async ({ lang }) => {
-  const translation = (await useTranslation(lang, "common")).t;
+  const translation = (await getTranslation(lang, "common")).t;
 
   return (
     <footer className=" relative pb-[calc(var(--inset)*2)] pt-16" id="footer">

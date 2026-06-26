@@ -10,7 +10,7 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import styles from "./Project.module.css";
 import { ProjectData } from "../../../Model";
 import { Locale } from "@/app/i18n/i18n-config";
-import { useTranslation } from "@/app/i18n/server";
+import { getTranslation } from "@/app/i18n/server";
 import Reveal from "@/app/components/ui/Reveal";
 
 type Props = {
@@ -19,7 +19,7 @@ type Props = {
 };
 
 const Project: React.FC<Props> = async ({ data, lang }) => {
-  const translation = (await useTranslation(lang, "common")).t;
+  const translation = (await getTranslation(lang, "common")).t;
 
   return (
     <article className="gap-x  grid py-10 md:grid-cols-2 ">

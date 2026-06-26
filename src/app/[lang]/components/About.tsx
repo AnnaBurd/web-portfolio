@@ -1,14 +1,14 @@
 import Reveal from "@/app/components/ui/Reveal";
 import { fontSecondary } from "@/app/fonts";
 import { Locale } from "@/app/i18n/i18n-config";
-import { useTranslation } from "@/app/i18n/server";
+import { getTranslation } from "@/app/i18n/server";
 
 type Props = {
   lang: Locale;
 };
 
 const About: React.FC<Props> = async ({ lang }) => {
-  const translation = (await useTranslation(lang, "home")).t;
+  const translation = (await getTranslation(lang, "home")).t;
 
   return (
     <section className="wrapper ">
