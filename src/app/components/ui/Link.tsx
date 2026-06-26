@@ -24,6 +24,10 @@ const Button: React.FC<Props> = ({
 
   if(href.startsWith("#")) return (<a href={href} className={`${styles["link-highlight"]} text-base font-medium ${className}`}>{children}</a>);
 
+  // External links open in a new tab
+
+  if(href.startsWith("http")) return (<a href={href} target="_blank" rel="noopener noreferrer" className={`${styles["link-highlight"]} text-base font-medium ${className}`}>{children}</a>);
+
 
   return (
     <Link

@@ -29,6 +29,7 @@ const Navbar: React.FC<Props> = ({ lang }) => {
 
   const links = [
     { path: portfolioPath, text: translation("nav.work") },
+    { path: "https://web3-lab.annaburd.me/", text: translation("nav.lab") },
     { path: "#footer", text: translation("nav.contacts") },
   ];
 
