@@ -35,7 +35,6 @@ export async function generateMetadata({
   const title = frontmatterData.title;
   const description = clampDescription(frontmatterData.introduction);
   const path = `/work/${slug}`;
-  const ogImage = frontmatterData.mockupAsset || defaultOgImage;
 
   return {
     title,
@@ -51,13 +50,13 @@ export async function generateMetadata({
       modifiedTime: frontmatterData.editedAt,
       authors: [meta.authorName],
       tags: frontmatterData.tags,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      // og:image is supplied by the colocated opengraph-image.tsx route.
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [ogImage],
+      // twitter:image is supplied by the colocated twitter-image.tsx route.
     },
   };
 }

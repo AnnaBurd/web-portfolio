@@ -7,12 +7,7 @@ import { Locale, locales } from "../i18n/i18n-config";
 import ContactsBar from "../components/contacts/ContactsBar";
 import SplashScreen from "../components/splash-screen/SplashScreen";
 import { ContextProvider } from "../context/context-provider";
-import {
-  siteUrl,
-  siteMeta,
-  defaultOgImage,
-  buildAlternates,
-} from "../seo";
+import { siteUrl, siteMeta, buildAlternates } from "../seo";
 import type { Metadata } from "next";
 
 // Return a list of `params` to populate the [lang] dynamic segment
@@ -83,13 +78,13 @@ export async function generateMetadata({
       description: copy.description,
       url: `${siteUrl}/${lang}`,
       locale: meta.locale,
-      images: [{ url: defaultOgImage, width: 1200, height: 630, alt: copy.title }],
+      // og:image is supplied by the colocated opengraph-image.tsx route.
     },
     twitter: {
       card: "summary_large_image",
       title: copy.title,
       description: copy.description,
-      images: [defaultOgImage],
+      // twitter:image is supplied by the colocated twitter-image.tsx route.
     },
     robots: {
       index: true,
