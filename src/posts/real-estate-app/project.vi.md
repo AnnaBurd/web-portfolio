@@ -61,7 +61,9 @@ Thiết kế trở thành một thách thức chính của dự án, nó mất n
 
 - [phiên bản đầu tiên](https://ssg-web-app.netlify.app/)
 - [phiên bản thứ hai _(đáp ứng)_](https://ssg-web-responsive.netlify.app/)
-- [phiên bản hiện tại _(thiết kế đổi mới)_](https://deft-entremet-3bc804.netlify.app/)
+- [phiên bản thứ ba _(thiết kế đổi mới)_](https://v1.viet-land.vn/), hiện đang chạy với tên **v1**
+
+Ngay cả phiên bản này cũng chưa phải là phiên bản cuối cùng. Số liệu thống kê sử dụng và hành vi thực tế của người truy cập cho thấy **ý tưởng chính có thể được truyền tải rõ ràng và thuyết phục hơn**. Quá trình suy nghĩ lại đó đã phát triển thành một thiết kế hoàn toàn mới — chính là phiên bản hiện tại, đang chạy với tên **[v2](https://viet-land.vn/)**.
 
 **Figma**, một công cụ thiết kế, tăng tốc quá trình biến ý tưởng thành **phiên bản xem trước trực tiếp**, khả năng prototyping nhanh của nó đóng một vai trò quan trọng trong việc cải thiện **vòng phản hồi với khách hàng**, đảm bảo rằng khách hàng được thông tin đầy đủ về tiến triển của quá trình phát triển và thúc đẩy quyết định cộng tác và thông tin.
 

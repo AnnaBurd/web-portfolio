@@ -65,7 +65,9 @@ The design became a keystone challenge of the project, it took the most time, wi
 
 - [first version](https://ssg-web-app.netlify.app/)
 - [second version _(responsive)_](https://ssg-web-responsive.netlify.app/)
-- [current version _(reworked design)_](https://deft-entremet-3bc804.netlify.app/)
+- [third version _(reworked design)_](https://v1.viet-land.vn/), now live as **v1**
+
+Even this turned out not to be the final word. Usage statistics and real visitor behavior later showed that the **main idea could be conveyed more clearly and convincingly**. That rethinking grew into a complete redesign — now the current version, live as **[v2](https://viet-land.vn/)**.
 
 **Figma**, a design tool, expedited the transformation of ideas into **live preview versions**. Its rapid prototyping capability played a crucial role in enhancing **the feedback loop with the client**, ensuring that the client remained well-informed about the progress of development and fostering a collaborative and informed decision-making process.
 
