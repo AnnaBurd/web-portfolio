@@ -30,14 +30,14 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
             </h4>
           </Reveal>
           <Reveal options={{ animationDelay: 0.15 }}>
-            <h2
+            <h1
               className={
                 fontSecondary.className +
                 ` mb-6 max-w-[22ch] font-black leading-tight [text-wrap:balance]`
               }
             >
               {projectData.frontmatterData.title}
-            </h2>
+            </h1>
           </Reveal>
           <Reveal options={{ animationDelay: 0.3 }}>
             <p className=" my-auto max-w-prose text-base leading-7 opacity-80 [text-wrap:balance] md:text-lg md:leading-loose">
