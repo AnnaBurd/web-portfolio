@@ -1,12 +1,25 @@
 import { ImageResponse } from "next/og";
-import { Locale } from "@/app/i18n/i18n-config";
+import { Locale, locales } from "@/app/i18n/i18n-config";
 import { siteMeta, siteUrl } from "@/app/seo";
-import { getProjectData } from "@/scripts/getProjectsData";
+import { getProjectData, getProjectsData } from "@/scripts/getProjectsData";
 import { loadOgFonts } from "@/app/_og/fonts";
 
 export const alt = "Project — Anna Burdanova portfolio";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// Pre-render one static PNG per locale × project at build time. Metadata image
+// routes don't inherit params from the parent segment, so we enumerate the full
+// lang × slug matrix here. Without this the route is server-rendered on demand
+// for every crawl, which surfaces as intermittent 500s in Search Console.
+export function generateStaticParams() {
+  return locales.flatMap((lang) =>
+    getProjectsData(lang).map((project) => ({ lang, slug: project.slug })),
+  );
+}
+
+// Only the slugs listed above are valid — never render unknown ones on demand.
+export const dynamicParams = false;
 
 export default async function Image({
   params: { lang, slug },

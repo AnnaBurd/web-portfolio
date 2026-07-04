@@ -1,11 +1,19 @@
 import { ImageResponse } from "next/og";
-import { Locale } from "../i18n/i18n-config";
+import { Locale, locales } from "../i18n/i18n-config";
 import { siteMeta, siteUrl } from "../seo";
 import { loadOgFonts } from "../_og/fonts";
 
 export const alt = "Anna Burdanova — web developer portfolio";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// Pre-render one static PNG per locale at build time so the route is never
+// server-rendered on demand (which surfaces as 500s in Search Console).
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
+export const dynamicParams = false;
 
 // Localized role line shown under the author name.
 const role: Record<Locale, string> = {
