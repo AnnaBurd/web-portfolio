@@ -56,7 +56,8 @@ export default async function Image({
             marginBottom: 28,
           }}
         >
-          {meta.authorName} · Portfolio
+          {/* Single text child: satori requires multi-child divs to be flex. */}
+          {`${meta.authorName} · Portfolio`}
         </div>
         <div
           style={{
