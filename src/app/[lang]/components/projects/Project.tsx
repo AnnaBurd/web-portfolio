@@ -55,13 +55,14 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
         </p>
         <div className="pointer-events-auto mt-6 flex flex-wrap items-center gap-4 md:mt-8 ">
           <ButtonLink
-            href={`${lang}/work/${data.slug}`}
+            href={`/${lang}/work/${data.slug}`}
             className="min-w-[7.5rem] !px-4 lg:min-w-[9rem]"
           >
             {translation("btn.about")}
           </ButtonLink>
           <ButtonLink
             href={data.previewUrl}
+            umamiEvent={`live-site-${data.slug}`}
             kind="secondary"
             className={
               data.currentVersionUrl
@@ -76,6 +77,7 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
           {data.currentVersionUrl && (
             <ButtonLink
               href={data.currentVersionUrl}
+              umamiEvent={`live-site-${data.slug}`}
               kind="secondary"
               className="!px-4"
             >
@@ -95,7 +97,7 @@ const Project: React.FC<Props> = async ({ data, lang }) => {
         // }}
       >
         <Link
-          href={`${lang}/work/${data.slug}`}
+          href={`/${lang}/work/${data.slug}`}
           scroll={true}
           className={`${styles.preview} group relative block  h-[clamp(16rem,35vh,24rem)]  w-full md:h-[clamp(20rem,70vh,27rem)]  `}
         >

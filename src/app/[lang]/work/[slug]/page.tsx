@@ -48,6 +48,7 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
           <Reveal className="mt-6" options={{ animationDelay: 0.5 }}>
             <Link
               href={projectData.frontmatterData.repositoryUrl}
+              umamiEvent={`repo-${params.slug}`}
               className="mr-6"
             >
               {translation("links.github")}
@@ -55,6 +56,7 @@ const ProjectPage: React.FC<Props> = async ({ params }) => {
 
             <Link
               href={projectData.frontmatterData.previewUrl}
+              umamiEvent={`live-site-${params.slug}`}
               className="relative"
             >
               {translation("links.live")} &nbsp;&nbsp;&nbsp;

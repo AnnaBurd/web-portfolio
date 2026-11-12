@@ -5,6 +5,14 @@ export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://annaburd.me"
 ).replace(/\/$/, "");
 
+// Umami analytics (self-hosted). `domains` limits tracking to production so
+// local dev and Netlify deploy previews don't pollute the stats.
+export const umami = {
+  src: "https://stats.annaburd.me/script.js",
+  websiteId: "ccbc87d2-ff47-45d1-98b9-a4600560e0c0",
+  domains: "annaburd.me",
+};
+
 // Default social-share image used when a page does not provide its own.
 export const defaultOgImage = "/images/work/real-estate-app/mockup.png";
 

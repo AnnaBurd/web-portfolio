@@ -6,6 +6,8 @@ type Props = {
   href?: string;
   kind?: "primary" | "secondary";
   className?: string;
+  // Umami custom event name, tracked on click
+  umamiEvent?: string;
 };
 
 const ButtonLink: React.FC<Props> = ({
@@ -13,6 +15,7 @@ const ButtonLink: React.FC<Props> = ({
   kind = "primary",
   href = "/#",
   className,
+  umamiEvent,
 }) => {
   return (
     <Link
@@ -20,6 +23,7 @@ const ButtonLink: React.FC<Props> = ({
       className={`${styles.button} ${
         kind === "secondary" ? styles["button--secondary"] : ""
       } ${className ? className : ""}`}
+      data-umami-event={umamiEvent}
     >
       {children}
     </Link>

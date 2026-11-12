@@ -152,6 +152,7 @@ const MobileNavbar: React.FC<Props> = ({ lang, links }) => {
               key={contact.key}
               variants={linkVariants}
               href={contact.href}
+              data-umami-event={contact.event}
               whileHover={{ color: "var(--color-btn-active)" }}
               whileTap={{ scale: 0.95 }}
             >

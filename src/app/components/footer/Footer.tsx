@@ -46,6 +46,7 @@ const Footer: React.FC<Props> = async ({ lang }) => {
               {translation("footer.text")}
               <Link
                 href={`mailto:${email}`}
+                umamiEvent="contact-email"
                 className="mx-1 my-0 max-md:text-sm"
               >
                 {email}

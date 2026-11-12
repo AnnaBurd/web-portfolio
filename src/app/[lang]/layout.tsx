@@ -7,7 +7,9 @@ import { Locale, locales } from "../i18n/i18n-config";
 import ContactsBar from "../components/contacts/ContactsBar";
 import SplashScreen from "../components/splash-screen/SplashScreen";
 import { ContextProvider } from "../context/context-provider";
-import { siteUrl, siteMeta, buildAlternates } from "../seo";
+import { siteUrl, siteMeta, buildAlternates, umami } from "../seo";
+import { github, linkedin } from "../components/contacts/Contacts";
+import Script from "next/script";
 import type { Metadata } from "next";
 
 // Return a list of `params` to populate the [lang] dynamic segment
@@ -25,19 +27,19 @@ const homeCopy: Record<
   { title: string; titleLabel: string; description: string }
 > = {
   en: {
-    title: "Home · Anna's portfolio",
+    title: "Anna Burdanova — Web Developer (React, Next.js)",
     titleLabel: "Home",
     description:
       "Anna Burdanova is a web developer experienced in React.js, Next.js, TypeScript, JavaScript, HTML, CSS, and more.",
   },
   ru: {
-    title: "Главная · Портфолио Анны",
+    title: "Анна Бурданова — веб-разработчик (React, Next.js)",
     titleLabel: "Главная",
     description:
       "Анна Бурданова - веб-разработчик, опытный в React.js, Next.js, TypeScript, JavaScript, HTML, CSS и многом другом.",
   },
   vi: {
-    title: "Trang chủ · Hồ sơ của Anna",
+    title: "Anna Burdanova — Lập trình viên Web (React, Next.js)",
     titleLabel: "Trang chủ",
     description:
       "Anna Burdanova là một nhà phát triển web có kinh nghiệm về React.js, Next.js, TypeScript, JavaScript, HTML, CSS và nhiều hơn nữa.",
@@ -55,7 +57,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: {
       default: copy.title,
-      template: `%s · ${meta.siteName}`,
+      template: `%s · ${meta.authorName}`,
     },
     description: copy.description,
     applicationName: meta.siteName,
@@ -121,7 +123,7 @@ export default function Layout({ children, params: { lang } }: Props) {
           "HTML",
           "CSS",
         ],
-        sameAs: ["https://github.com/AnnaBurd"],
+        sameAs: [github, linkedin],
       },
       {
         "@type": "WebSite",
@@ -148,6 +150,12 @@ export default function Layout({ children, params: { lang } }: Props) {
           {children}
           <Footer lang={lang} />
         </ContextProvider>
+        <Script
+          src={umami.src}
+          data-website-id={umami.websiteId}
+          data-domains={umami.domains}
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

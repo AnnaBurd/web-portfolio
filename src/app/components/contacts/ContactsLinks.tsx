@@ -6,6 +6,7 @@ const ContactsLinks = () => {
     <a
       key={contact.key}
       href={contact.href}
+      data-umami-event={contact.event}
       className="transition-all duration-150 ease-in-out hover:text-[--color-btn-active]"
     >
       <Magnetic>{contact.icon}</Magnetic>

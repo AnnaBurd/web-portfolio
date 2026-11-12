@@ -53,7 +53,10 @@ export function middleware(request: NextRequest) {
 
   request.nextUrl.pathname = `/${locale}${pathname}`;
 
-  return NextResponse.rewrite(request.nextUrl);
+  // Redirect (not rewrite) so unprefixed URLs like "/" do not serve duplicate
+  // content with a 200. 307 keeps it temporary since the target depends on
+  // the visitor's language.
+  return NextResponse.redirect(request.nextUrl, 307);
 }
 
 export const config = {
